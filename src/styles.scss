@@ -1,0 +1,597 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+$font : 'Montserrat',
+sans-serif;
+$primaryColor: #2ebfd4;
+$primaryLink: #55E5D2;
+$bg-sec: #F4FCFF;
+$black: 900;
+$medium: 500;
+$semi-bold: 600;
+$shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+body {
+  overflow-x: hidden;
+  // line-height: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+button,
+a,
+div,
+span {
+  font-family: $font;
+}
+
+.container-fluid {
+  padding-left: 8.333333%;
+  padding-right: 8.333333%;
+}
+
+h1 {
+  font-size: 5.2vw;
+}
+
+h3 {
+  font-size: 1.7vw;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.primary-btn {
+  background-color: $primaryColor;
+  font-weight: $medium;
+  position: relative;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  display: inline-block;
+  border: 0px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.primary-link {
+  color: $primaryLink;
+  font-weight: $medium;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  // img {
+  // width: 20px;
+  // }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.projects-layout {
+  .owl-item {
+    transform: scale(0.88) !important;
+    transition: all 0.3s ease-in-out;
+
+    .inner {
+      background: rgba(255, 255, 255, 0.5) !important;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .owl-item.center {
+    transform: scale(1) !important;
+
+    .inner {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)) !important;
+    }
+  }
+}
+
+.project-planning {
+  .owl-carousel .owl-stage {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.primary-link.white {
+  color: white;
+}
+
+
+.jumbotron-bg {
+  .owl-carousel {
+    .owl-item {
+      height: 100vh;
+
+      .slide {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+
+
+.mobile-toggle {
+  display: none;
+}
+
+#gallery {
+  .img-wrapper {
+    height: 50vh;
+    // width: 100%;
+    position: relative;
+    margin-top: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    // img {
+    //   width: 100%;
+    // }
+    .img-wrapper-background {
+      height: 35vh;
+    }
+  }
+
+  .img-overlay {
+    // background: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    i {
+      color: #fff;
+      font-size: 3em;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.unit-btn{
+  // background-color: chartreuse;
+  margin: 1%;
+}
+
+@media (max-width: 767px) {
+
+  h1 {
+    font-size: 10vw;
+  }
+
+  h3 {
+    font-size: 6vw;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  p {
+    font-size: 3.7vw;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  h1 {
+    font-size: 10vw;
+  }
+
+  h3 {
+    font-size: 3vw;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+
+/* --------- style arabic -------- */
+.arabic-font-header a.nav-link,
+a.side-link,
+.arabic-font-header .dropdown-item {
+  font-family: 'Changa', sans-serif !important;
+  text-align: right;
+
+}
+
+.portfolio {
+  .right-side,
+  .left-side {
+    span {
+      font-family: 'Changa', sans-serif !important;
+    }
+  }
+}
+
+.environment {
+  .environment-container {
+    h5 {
+      font-family: 'Changa', sans-serif !important;
+
+    }
+  }
+}
+
+.arabic-font-header .mobile-toggle {
+  margin-left: 0% !important;
+}
+
+.arabic-font-header .navbar {
+  direction: rtl;
+  text-align: right;
+
+  .dropdown-item {
+    text-align: right;
+    font-family: 'Changa', sans-serif !important;
+  }
+
+}
+
+.arabic-font-header {
+  .mobile-sidebar {
+    direction: rtl;
+  }
+
+  .close {
+    float: left;
+  }
+}
+
+
+.arabic-font {
+  .btn-explor {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .custom-file {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+
+  .color {
+    text-align: right;
+    direction: rtl;
+
+    .job-form {
+      .form-group {
+        label {
+          font-family: 'Changa', sans-serif !important;
+        }
+
+        i {
+          margin-right: 0 !important;
+          margin-left: 10px;
+        }
+
+        textarea {
+          font-family: 'Changa', sans-serif !important;
+          direction: rtl;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+
+  .about-us,
+  .our-project-box {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .align-items-center {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .jumbotron-text-wrapper2 {
+    text-align: right !important;
+  }
+
+  .primary-link {
+    direction: rtl;
+    text-align: right;
+
+    img {
+      transform: scaleX(-1);
+      padding-left: 3rem;
+    }
+  }
+
+  .project-box {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .portfolio {
+    text-align: right;
+
+    h3,
+    p {
+      font-family: 'Changa', sans-serif !important;
+    }
+
+    .left-side,
+    .right-side ul li {
+      font-family: 'Changa', sans-serif !important;
+      direction: rtl;
+      text-align: right;
+
+    }
+
+    .project-box {
+      .text-wrapper {
+
+        h2,
+        h3,
+        a {
+          font-family: 'Changa', sans-serif !important;
+        }
+      }
+    }
+  }
+
+  .allboxs {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .form-group p {
+    text-align: right !important;
+  }
+
+  .phase-desc {
+    text-align: right;
+  }
+
+  .inner-desc {
+    width: 100% !important;
+    direction: rtl;
+    text-align: right !important;
+
+    h3,
+    p {
+      text-align: right;
+      // margin-right: -30%;
+    }
+
+    .vl {
+      margin-left: 100%;
+    }
+
+
+
+
+  }
+
+  .arrow-project {
+    p {
+      text-align: right;
+    }
+
+
+  }
+
+
+  .div-form {
+    direction: rtl;
+    text-align: right;
+
+    p {
+      font-family: 'Changa', sans-serif !important;
+    }
+
+    input {
+      font-family: 'Changa', sans-serif !important;
+    }
+
+    textarea {
+      direction: ltr;
+      text-align: right;
+      font-family: 'Changa', sans-serif !important;
+    }
+
+    #btn-sub {
+      font-family: 'Changa', sans-serif !important;
+    }
+  }
+
+  .form-group input {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  .primary-btn {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  h1 {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  h3 {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  p {
+    direction: rtl;
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  a {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  .reserve-unit2 {
+    .custom-select {
+      direction: ltr;
+    }
+
+    h3 {
+      text-align: center !important;
+    }
+  }
+
+  .solution_btn {
+    font-family: 'Changa', sans-serif !important;
+  }
+
+  .explore {
+
+    h3,
+    p,
+    label,
+    ul,
+    li {
+      text-align: right;
+      direction: rtl;
+      font-family: 'Changa', sans-serif !important;
+    }
+
+    .order-one {
+      order: 2;
+    }
+
+    .order-two {
+      order: 1;
+      padding-top: 25px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.arabic-font-footer {
+
+  footer {
+
+    h4,
+    p,
+    a,
+    label,
+    input {
+      direction: rtl;
+      text-align: right !important;
+      font-family: 'Changa', sans-serif !important;
+    }
+
+    .col-xl-7 {
+      order: 1;
+    }
+
+    .form-group {
+      text-align: right !important;
+    }
+
+    .footer-about-content,
+    .footer-contact-content,
+    .footer-callus-content {
+      text-align: right;
+    }
+
+    .left {
+      text-align: right;
+      direction: rtl;
+    }
+
+    .right ul {
+      text-align: left !important;
+    }
+
+    .row {
+      flex-direction: row-reverse;
+    }
+  }
+
+  a {
+    font-family: 'Changa', sans-serif !important;
+
+  }
+
+  .form-sub-footer {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .form-group label,
+  input {
+    font-family: 'Changa', sans-serif !important;
+
+  }
+
+  .primary-btn {
+    font-family: 'Changa', sans-serif !important;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .arabic-font-footer footer .col-xl-5 {
+    order: 2;
+  }
+
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  .arabic-font-footer footer .col-xl-5 {
+    order: 2;
+  }
+}

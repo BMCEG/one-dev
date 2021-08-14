@@ -1,0 +1,150 @@
+@import "../../../styles.scss";
+
+.about-section {
+  padding-bottom: 50px;
+
+  .section-header {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+
+    .overlay {
+      z-index: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.3)
+      );
+    }
+
+    .overlay-title{
+      // background-color: crimson;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+
+    h1 {
+      text-align: center;
+      font-weight: $black;
+      color: white;
+      text-transform: uppercase;
+      z-index: 2;
+      padding-bottom: 20px;
+    }
+  }
+
+  .development-history {
+    margin-top: 100px;
+
+    .development-history-containt {
+      h3 {
+        text-transform: uppercase;
+        font-weight: $black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+
+      p {
+        padding-top: 5px;
+        margin: 0;
+      }
+    }
+
+    .development-history-img {
+      width: 100%;
+      height: 500px;
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+// section responsice
+
+@media only screen and (max-width: 768px) {
+  .about-section {
+    padding-bottom: 0px;
+
+    .development-history {
+      margin-top: 0px;
+
+      .order-one {
+        order: 2;
+      }
+
+      .order-two {
+        order: 1;
+        padding-top: 25px;
+      }
+
+      .development-history-img {
+        height: 500px;
+      }
+
+      .development-history-containt {
+        padding-top: 25px;
+      }
+    }
+
+    .our-environment,
+    .care-about {
+      margin-top: 30px;
+
+      .care-about-img {
+        height: 500px;
+      }
+    }
+
+    .care-about {
+      .care-about-containt {
+        padding-top: 25px;
+      }
+    }
+  }
+
+  .solution_btn {
+    width: 45vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .solution_btn {
+    width: 35vw;
+  }
+}

@@ -1,0 +1,166 @@
+@import "../../../styles.scss";
+
+.careers-section {
+  padding-bottom: 50px;
+
+  .section-header {
+    height: 100vh;
+    background-image: url(../../../assets/img/careers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    h1 {
+      text-align: center;
+      font-weight: $black;
+      color: white;
+      text-transform: uppercase;
+      z-index: 2;
+      padding-bottom: 20px;
+    }
+    .overlay {
+      z-index: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.3));
+    }
+
+    .overlay-title{
+      // background-color: crimson;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+  }
+
+  .careers-body {
+    margin-top: 100px;
+  }
+
+  .careers-img-content {
+    .development-history-img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 650px;
+    }
+  }
+
+  .environment {
+    margin-top: 100px;
+
+    .environment-container {
+      margin-bottom: 50px;
+    }
+
+    .environment-box {
+      border: solid 1px #707070;
+
+      h5 {
+        border-bottom: solid 1px #707070;
+        padding: 15px 0;
+        margin: 0;
+        background-color: #f4fcff;
+      }
+    }
+  }
+
+  .environment-body {
+    padding: 25px 20px;
+  }
+
+  .color {
+    padding: 30px 0;
+    background-color: #f4fcff;
+
+    .job-form {
+
+      .form-control,
+      .custom-select {
+        height: 50px;
+        padding-left: 25px;
+        border-radius: 0;
+      }
+
+      .form-group {
+        i {
+          margin-right: 10px;
+        }
+      }
+
+      .custom-file-input,
+      .custom-file-label,
+      .custom-file {
+        height: 50px;
+        border-radius: 0;
+      }
+
+      .custom-file-label {
+        padding: 0.8rem 0.75rem;
+
+        &:after {
+          height: 100%;
+          padding: 0.8rem 0.75rem;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .careers-section {
+      .careers-body {
+        margin-top: 50px;
+
+        p {
+          line-height: 1.5;
+        }
+      }
+
+      .careers-img-content {
+        .development-history-img {
+          height: 520px;
+        }
+      }
+
+      .environment {
+        margin-top: 50px;
+
+        .environment-container {
+          margin-bottom: 20px;
+        }
+
+        .environment-box {
+          border: solid 1px #707070;
+
+          h5 {
+            border-bottom: solid 1px #707070;
+            padding: 15px 0;
+            margin: 0;
+            background-color: #f4fcff;
+          }
+        }
+      }
+
+      .job-form {
+        margin-top: 50px;
+      }
+    }
+  }
+}

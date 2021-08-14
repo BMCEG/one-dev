@@ -1,0 +1,96 @@
+<div>
+  <div class="image-contactus text-center"  style="background-image: url(../../../assets/img/contact.jpeg);">
+    <div class="overlay"></div>
+    <h1 class="overlay-title">{{'CONTACTUS.TITLE_PAGE' |translate}}</h1>
+  </div>
+  <div class="container-fluid py-5 contactus-body">
+    <div class="loaction">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3454.5178658593964!2d31.453266143798828!3d30.021997451782227!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583ccae294ff0f%3A0xbc6cb4cf65b35b99!2s313%20Street%202%2C%20First%20New%20Cairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1595253819298!5m2!1sen!2seg"
+        width="600" height="450" frameborder="0" style="border:0;"
+        allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <div class="row div-form">
+      <div class="col-xl-6">
+        <div class="form-body">
+          <h3> {{'CONTACTUS.CONTACT_INFO_TITLE' |translate}}</h3>
+          <p><strong> {{'CONTACTUS.ADDRESS' |translate}} :</strong>
+            {{'CONTACTUS.ADDRESS_INFO' |translate}} <br>
+            {{'CONTACTUS.ADDRESS_INFO_2' |translate}} <br> <strong>{{'CONTACTUS.PHONE'
+              |translate}} :</strong>
+            16251<br><strong>{{'CONTACTUS.EMAIL' |translate}} :</strong>
+            info@one-development.com</p>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="form-body">
+          <form id="ContactUs-Form" #varform="ngForm"
+            ngSubmit="subForm(varform)">
+            <h3>{{'CONTACTUS.CONTACTUS_FORM_TITLE' |translate}}</h3>
+            <div class="form-group">
+              <input ngModel #fullname="ngModel" name="full_name" type="text"
+                class="form-control" id="name"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_FULLNAME' |translate}}"
+                required (keypress)="keyPressStr($event)">
+              <p *ngIf="fullname.invalid && fullname.touched"
+                style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_FULLNAME' |translate}}</p>
+            </div>
+            <div class="form-group">
+              <input ngModel #email="ngModel" name="email" type="email"
+                class="form-control" id="email"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_EMAIL' |translate}}"
+                required email>
+              <p *ngIf="email.touched && email.errors?.required"
+                style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_EMAIL' |translate}}</p>
+              <p *ngIf="email.touched && email.errors?.email"
+                style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_EMAIL_2' |translate}}</p>
+            </div>
+            <div class="form-group">
+              <input ngModel #phone="ngModel" name="phone" type="tel"
+                class="form-control" id="phone"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_MOBILE_NUMBER'
+                |translate}}" required minlength="5" maxlength="15"
+                (keypress)="keyPressNum($event)">
+              <p *ngIf="phone.invalid && phone.touched" style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_PHONE'
+                |translate}}
+              </p>
+              <p *ngIf="phone.invalid && phone.touched &&
+                phone.errors?.minlength" style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_PHONE_2' |translate}}</p>
+              <p *ngIf="phone.invalid && phone.touched &&
+                phone.errors?.maxlength" style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_PHONE_3' |translate}}</p>
+            </div>
+            <div class="form-group">
+              <textarea ngModel #message="ngModel" name="message" type="text"
+                class="form-control" rows="5" id="message"
+                minlength="50" maxlength="250"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_MESSAGE_HELP'
+                |translate}}"
+                required></textarea>
+              <p *ngIf="message.invalid && message.touched &&
+                message.errors?.required" style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_MSG_HELP' |translate}}</p>
+              <p *ngIf="message.invalid && message.touched &&
+                message.errors?.minlength" style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_MSG_HELP_2' |translate}}</p>
+              <p *ngIf="message.invalid && message.touched &&
+                message.errors?.maxlenth" style="color:#ff7878">
+                {{'CONTACTUS.ERORR_MSG_MSG_HELP_3' |translate}}</p>
+            </div>
+            <button [disabled]="varform.invalid" (click)="subForm(varform)"
+              type="submit" class="primary-btn submit"
+              id="btn-sub">{{'CONTACTUS.BTN_SUBMIT' |translate}}</button>
+            <div *ngIf="!showMsg">
+              <p *ngFor="let e of errorMsg | keyvalue" style="color:#ff7878">
+                *{{e.key | titlecase}}{{e.value[0] | titlecase}}</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

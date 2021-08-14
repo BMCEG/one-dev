@@ -1,0 +1,254 @@
+@import "../../../styles.scss";
+
+.portfolio {
+  padding: 3% 0;
+
+
+  .section-header {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+
+    .overlay {
+      z-index: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.3));
+    }
+
+    .overlay-title{
+      // background-color: crimson;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    h1 {
+      text-align: center;
+      font-weight: $black;
+      color: white;
+      text-transform: uppercase;
+      z-index: 2;
+      padding-bottom: 20px;
+    }
+  }
+  
+  h3 {
+    font-weight: $black;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .title {
+    color: black;
+  }
+
+  .subtitle {
+    background: #58E0C7;
+    background: -webkit-linear-gradient(to right, #58E0C7 0%, #20AECB 49%);
+    background: -moz-linear-gradient(to right, #58E0C7 0%, #20AECB 49%);
+    background: linear-gradient(to right, #58E0C7 0%, #20AECB 49%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        
+  }
+
+  .portfolio-img {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+  }
+  
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .portfolio-row {
+    // background-color: salmon;
+    // display: flex;
+    // flex-direction: row-reverse;
+
+  }
+
+  p {
+    font-weight: $medium;
+    color: black;
+  }
+
+  .right-side {
+    // background-color: royalblue;
+    height: 100%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .left-side {
+    margin: 1%;
+  }
+  .project-box {
+    padding: 1.7rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    transition: ease-in-out 0.5s;
+    height: 100%;
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+
+    .overlay {
+      z-index: -1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.3)
+      );
+    }
+
+    .width-half {
+      width: 50%;
+    }
+
+    .text-wrapper {
+      z-index: 2;
+
+      .vl {
+        height: 360px;
+        width: 1px;
+        background-color: white;
+        margin-bottom: 1rem;
+      }
+
+      h3,
+      h2 {
+        font-weight: $black;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1vw;
+      }
+      h2 {
+        font-size: 1.7vw;
+        padding-bottom: 10px;
+      }
+
+      p {
+        font-weight: $medium;
+        color: white;
+      }
+    }
+  }
+
+  .video-container {
+    margin-top: 30px;
+    video {
+      width: 100%;
+    }
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .portfolio {
+    .project-box {
+      .width-half {
+        width: 100%;
+      }
+
+      .text-wrapper {
+        h2 {
+          font-size: 7vw;
+        }
+        h3 {
+          font-size: 4vw;
+        }
+
+        .vl {
+          height: 200px;
+        }
+
+        p {
+          font-size: 4vw;
+        }
+      }
+    }
+    .video-container {
+      iframe {
+        width: 100%;
+        height: 35vh;
+      }
+    }
+  }
+}
+@media only screen and (width: 768px) {
+  .portfolio {
+    .project-box {
+      .text-wrapper {
+        h2 {
+          font-size: 2vw;
+        }
+        h3 {
+          font-size: 1.7vw;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .portfolio {
+    .project-box {
+      .width-half {
+        width: 100%;
+      }
+
+      .text-wrapper {
+        h2 {
+          font-size: 2vw;
+        }
+        h3 {
+          font-size: 1.6vw;
+        }
+        .vl {
+          height: 200px;
+        }
+
+        p {
+          font-size: 2vw;
+        }
+      }
+    }
+    .video-container {
+      iframe {
+        width: 100%;
+        height: 45vh;
+        background-image: url();
+      }
+    }
+  }
+}

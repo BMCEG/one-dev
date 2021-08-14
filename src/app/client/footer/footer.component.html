@@ -1,0 +1,87 @@
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-xl-3 col-md-6">
+        <div class="footer-about-content">
+          <h4 style="font-weight: 600">{{'HEADER.ABOUT' |translate}}</h4>
+          <p>{{'FOOTER.ABOUT_FOOTER' |translate}}
+          </p>
+          <a routerLink="/about"> {{'HOME.READ_MORE' |translate}}</a>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-md-6">
+        <div class="footer-contact-content">
+          <h4 style="font-weight: 600">{{'HEADER.CONTACT_US' |translate}}</h4>
+          <a title="Our location" href="https://www.google.com/maps/@30.0033908,31.4046362,18z?hl=en"
+            target="_blanck"><i class="fas fa-map-marker-alt"></i></a>
+          <p>{{'FOOTER.FOOTER_ADDRESS' |translate}} </p>
+        </div>
+
+      </div>
+
+      <div class="col-xl-5 col-md-6 subscribe-box">
+        <form class="form-group" #newsletterForm="ngForm" (ngSubmit)="onSubmit(newsletterForm.form)">
+          <label for="email">{{'FOOTER.SUBSCRIBE_TO_NEWSLATTER' |translate}}</label>
+          <div class="form-row">
+            <div class="col-xl-7">
+              <input ngModel #newsLatterEmail="ngModel" name="newsLatterEmail" type="email" class="form-control mb-2"
+                id="email" name="Email" placeholder="{{'CONTACTUS.PLACEHOLDER_EMAIL' |translate}}" required email>
+              <p *ngIf="newsLatterEmail.touched && newsLatterEmail.errors?.required" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_EMAIL' |translate}}</p>
+              <p *ngIf="newsLatterEmail.touched && newsLatterEmail.errors?.email" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_EMAIL_2' |translate}}</p>
+            </div>
+            <div class="col-xl-5">
+              <button type="submit" class="primary-btn mb-2"
+                [disabled]="!newsletterForm.valid">{{'FOOTER.SUBSCRIBE_BTN' |translate}}</button>
+            </div>
+          </div>
+          <div class="invalid-feedback">
+
+          </div>
+        </form>
+      </div>
+      <div class="col-xl-2 col-md-6">
+        <div class="footer-callus-content">
+          <h4 style="font-weight: 600">{{'FOOTER.FOOTER_CALL' |translate}}</h4>
+          <h2>16251</h2>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row my-2 form-sub-footer">
+      <div class="col-xl-7">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="left">
+          <p>{{'FOOTER.POWERED_BY_AZ_STUDIOS_3' |translate}} <span>|</span>{{'FOOTER.PRIVACY_POLICY' |translate}}</p>
+        </div>
+      </div>
+      <div class="col-xl-6 right">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/ONEdevelopments/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/1developments" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/1developments/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

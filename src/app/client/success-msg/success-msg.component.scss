@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.msg {
+    padding: 10% 0;
+    background-color: $bg-sec;
+    text-align: center;
+    height: 95vh;
+  
+    h3 {
+      font-weight: $black;
+      text-transform: uppercase;
+      color: black;
+    }
+  
+    p {
+      font-weight: $medium;
+      color: black;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+  .msg {
+    padding: 30% 0;
+    height: auto;
+  }
+
+}

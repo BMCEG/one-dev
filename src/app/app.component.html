@@ -1,0 +1,5 @@
+<app-header [ngClass]="{'arabic-font-header': getBodyLang()}"></app-header>
+<div [ngClass]="{'arabic-font': getBodyLang()}" [@routeAnimation]="getDepth(myOutlet)">
+    <router-outlet #myOutlet="outlet" (activate)="onActivate($event)"></router-outlet>
+</div>
+<app-footer [ngClass]="{'arabic-font-footer': getBodyLang()}"></app-footer>

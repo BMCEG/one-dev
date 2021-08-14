@@ -1,0 +1,353 @@
+@import "../../../styles.scss";
+
+.navbar {
+  transition: background-color 0.3s ease-in;
+  border-bottom: 0.5px solid transparent;
+
+
+
+  .logo {
+    display: block;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .logo-black {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navbar-brand {
+    margin-right: 4rem;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-item {
+    margin: 0 0.7rem;
+
+    .nav-link {
+      color: white;
+      opacity: 1;
+      text-transform: uppercase;
+    }
+
+
+  }
+
+  .social {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    li {
+      margin-left: 15px;
+
+      a {
+        color: white;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .language {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    li {
+
+      a {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}
+
+#ar-link {
+  font-family: 'Changa', sans-serif;
+}
+
+#ar-link-mobile {
+  font-family: 'Changa', sans-serif;
+}
+
+.dropdown-item {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.dropdown-toggle::after {
+  width: 10px;
+  height: 10px;
+  border-color: black;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  transform: rotate(-45deg);
+  border-top: 0;
+  border-right: 0;
+}
+
+// ---------------------------------mobile side nav---------------------------
+
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+
+.mobile-toggle {
+  background-color: transparent;
+  border: 0px;
+  margin-left: auto;
+
+  &:focus {
+    outline: none;
+  }
+
+  .icon-bar {
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    display: block;
+    transition: all 0.2s;
+    margin-top: 4px
+  }
+
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .middle-bar {
+    opacity: 0;
+  }
+
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.mobile-toggle.collapsed .top-bar {
+  transform: rotate(0);
+}
+
+.mobile-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.mobile-toggle.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+
+.modal.right .modal-content {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow-y: auto;
+}
+
+.modal.right .modal-body {
+  padding: 15px 15px 80px;
+}
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+  right: -320px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.show .modal-dialog {
+  right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+  border-radius: 0;
+  border: none;
+}
+
+.modal-header {
+  border-bottom-color: transparent;
+  background-color: #ffffff;
+}
+
+.mobile-sidebar {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style-type: none;
+  padding: 30px;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 8px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $primaryColor;
+    border-radius: 8px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+  }
+
+  .side-item {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .side-link {
+    font-weight: $medium;
+    color: #000000 !important;
+    text-align: center;
+    margin: auto;
+    text-transform: uppercase;
+  }
+
+  .side-item.active {
+    .side-link {
+      color: $primaryColor !important;
+      border-bottom: 4px solid $primaryColor;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 60%;
+    display: block;
+    margin: 10px 0;
+    overflow: hidden;
+    background-color: #CCCCCC;
+  }
+
+  .language {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+
+      a {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .social2 {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin-right: 15px;
+
+      a {
+        color: black;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  background-color: #F4F4F4 !important;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 0;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  color: $primaryColor;
+  text-shadow: none;
+  opacity: 1;
+  margin-top: 15px;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    .navbar-collapse {
+      opacity: 0;
+    }
+
+    .social {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+
+  .navbar {
+    .navbar-collapse {
+      opacity: 0;
+    }
+
+    .social {
+      display: none;
+    }
+  }
+}

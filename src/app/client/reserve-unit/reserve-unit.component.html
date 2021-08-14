@@ -1,0 +1,75 @@
+<div class="reserve-unit">
+  <div class="container-fluid">
+    <div class="row align-items-center my-5">
+      <div class="col-xl-6 order-1">
+        <h3>{{'RESERVEUNIT.RESERVE_TITLE' |translate}}</h3>
+        <p>{{'RESERVEUNIT.RESERVE_DESCRIPTION' |translate}}</p>
+      </div>
+      <div class="col-xl-6 order-2">
+        <div class="img-wrapper" style="background-image: url('../../assets/img/p7.jpg')"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="reserve-unit2">
+  <div class="container-fluid">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-xl-7">
+        <form #formReserve="ngForm" ngSubmit="subForm_reserve(varform)">
+          <div class="form-one">
+            <h3 class="mb-4">{{'RESERVEUNIT.YOUR_CONTACT_INFO' |translate}}</h3>
+            <div class="form-group">
+              <input ngModel #fullname="ngModel" name="name" type="text" class="form-control" id="InputName"
+                aria-describedby="name" placeholder="{{'CONTACTUS.PLACEHOLDER_FULLNAME' |translate}}" required
+                (keypress)="keyPressStr($event)">
+              <p *ngIf="fullname.invalid && fullname.touched" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_FULLNAME' |translate}}</p>
+            </div>
+            <div class="form-group">
+              <input ngModel #phone="ngModel" name="phone" type="tel" class="form-control" id="InputNumber"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_MOBILE_NUMBER' |translate}}" required minlength="5" maxlength="15"
+                (keypress)="keyPressNum($event)">
+              <p *ngIf="phone.invalid && phone.touched" style="color:brown">{{'CONTACTUS.ERORR_MSG_PHONE' |translate}}
+              </p>
+              <p *ngIf="phone.invalid && phone.touched && phone.errors?.minlength" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_PHONE_2' |translate}}</p>
+              <p *ngIf="phone.invalid && phone.touched && phone.errors?.maxlength" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_PHONE_3' |translate}}</p>
+            </div>
+            <div class="form-group">
+              <input ngModel #email="ngModel" name="email" type="email" class="form-control" id="InputEmail"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_EMAIL' |translate}}" required email>
+              <p *ngIf="email.touched && email.errors?.required" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_EMAIL' |translate}}</p>
+              <p *ngIf="email.touched && email.errors?.email" style="color:brown">
+                {{'CONTACTUS.ERORR_MSG_EMAIL_2' |translate}}</p>
+            </div>
+          </div>
+          <div class="form-two">
+            <h3 class="mb-4">{{'RESERVEUNIT.UNIT_INFO' |translate}}</h3>
+            <div class="form-group">
+              <select ngModel #project="ngModel" name="project" class="custom-select" id="ProjectSelect">
+                <option value="" selected>Project</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select ngModel #number_of_rooms="ngModel" name="payment_options" class="custom-select" id="RoomsSelect">
+                <option value="" selected>Payment Options</option>
+                <option value="1">100,000 to 150,000</option>
+                <option value="2">150,000 to 200,000</option>
+                <option value="3">200,000 to 250,000</option>
+              </select>
+            </div>
+          </div>
+
+          <button [disabled]="formReserve.invalid" (click)="subForm_reserve(formReserve)" type="submit"
+            class="primary-btn">{{'RESERVEUNIT.BTN_SUBMIT' |translate}}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

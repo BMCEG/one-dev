@@ -1,0 +1,131 @@
+<section class="projects-layout container-fluid">
+  <div class="row mb-5 pb-5 text-center justify-content-center">
+    <div class="col-xl-8">
+      <h3>{{'HOME.RESIDENTIAL_TITLE' |translate}}</h3>
+      <p>{{'HOME.RESIDENTIAL_DESC' |translate}}</p>
+    </div>
+  </div>
+  <div class="carousel-proj">
+    <owl-carousel-o class="projects-carousel" [options]="customOptions" (translated)="getPassedData($event)" #owlCar>
+      <ng-template *ngFor="let project of projects;let i = index" carouselSlide>
+        <div class="slide" [ngStyle]="{ 'background-image': 'url(' + project.main_image + ')'}" data-id="{{i}}">
+          <div class="inner">
+            <div class="inner-desc text-focus-in">
+              <h3 class="header-2">{{ project.newTitle }}</h3>
+              <p>{{ project.location }}</p>
+              <!-- <button class="primary-btn" routerLink="/reserve-unit">{{'PROJECTS.BTN_RESERVE_UNIT' |translate}}</button> -->
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+    <div class="carousel-prev arrow-project">
+      <p>{{'PROJECTS.ARROW_PROJECT_PREV' |translate}} <br>{{'PROJECTS.ARROW_PROJECT_PREV_PRO' |translate}} </p>
+
+      <button class="owl-prev" (click)="owlCar.prev()"></button>
+    </div>
+    <div class="carousel-next arrow-project">
+      <p>{{'PROJECTS.ARROW_PROJECT_NXT' |translate}} <br>{{'PROJECTS.ARROW_PROJECT_NXT_PRO' |translate}} </p>
+      <button class="owl-next" (click)="owlCar.next()"></button>
+    </div>
+  </div>
+
+  <div id="counter">
+    <h1>0{{ currentSlide }}</h1>
+    <h3>/{{ projects_length }}</h3>
+  </div>
+
+</section>
+
+<section id="hero-1" class="hero-jumbrton bg-fixed mt-5"
+  [ngStyle]="{ 'background-image': 'url(' + backGroundImg + ')'}">
+  <div class="inner container-fluid ">
+    <div class="inner-desc text-focus-in">
+      <h3>{{ newTitle }}</h3>
+      <p>{{ newDescription }}</p>
+      <div class="vl"></div>
+      <p>{{ lunchStr }} <strong>{{ lunchDate }}</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<section id="gallery">
+  <div class="col-md-12 text-center center-project-img-base">
+    <img class="center-project-img" src="{{ get_current_project().main_view }}">
+  </div>
+</section>
+
+
+<section class="project-planning container-fluid mt-5">
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3 class="mb-3">{{'PROJECTS.UNIT_LOCATION_TITLE' |translate}}</h3>
+      <p>{{'PROJECTS.UNIT_LOCATION_DESCRIPTION' |translate}}</p>
+    </div>
+    <div class="col-md-12 text-center">
+      <img width="100%" src="{{ get_current_project().main_location }}">
+    </div>
+  </div>
+  
+</section>
+<section id="gallery">
+  <div class="container-fluid">
+    <div id="image-gallery">
+      <div class="row projects-imgs" length="8">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section *ngIf="unit_image_length" class="project-planning container-fluid mt-5">
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3 class="mb-3">{{'PROJECTS.UNIT_PLANNING_TITLE' |translate}}</h3>
+      <p>{{'PROJECTS.UNIT_PLANNING_DESCRIPTION' |translate}}</p>
+    </div>
+    <div class="col-md-12 text-center">
+      <div class="container slider-img">
+        <owl-carousel-o [options]="customOptions2" #owlCar>
+          <ng-template *ngFor="let unit of counter(unit_image_length); let j = index" carouselSlide>
+            <img class="lmao" src="{{ get_current_project().unit_images[j].image }}">
+          </ng-template>
+        </owl-carousel-o>
+
+
+        <div class="btn-wrapper">
+          <button class="owl-prev" (click)="owlCar.prev()"></button>
+          <button class="owl-next" (click)="owlCar.next()"></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="project-launching container-fluid mt-5 mb-2 py-5">
+  <div class="row mb-3">
+    <div class="col-md-12 text-center">
+      <p>{{'PROJECTS.LAUNCHING_DATES_DESCRIPTION' |translate}}</p>
+      <div class="row mb-3">
+        <div class="col-md-2 text-center">
+        </div>
+        <div class="col-md-4 text-center unit-btn">
+          <a  href=" {{ get_current_project().unit_pdf }} " target="_blank" class="primary-btn">{{'PROJECTS.BTN_DOWNLOAD_BROCHOURE' |translate}}</a>
+        </div>
+        <div class="col-md-4 text-center unit-btn ">
+          <button class="primary-btn" routerLink="/reserve-unit">{{'PROJECTS.BTN_RESERVE_UNIT' |translate}}</button>
+        </div>
+        <div class="col-md-2 text-center">
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</section>

@@ -1,0 +1,118 @@
+<section class="careers-section">
+  <div class="section-header container-fluid">
+    <div class="overlay"></div>
+    <h1 class="overlay-title">{{'CAREERS.CAREERS_HEADER' |translate}}</h1>
+  </div>
+  <div class="container environment">
+    <div class="environment-container">
+      <h5 class="text-center text-uppercase font-weight-bold">
+        {{'CAREERS.OUR_ENVIRONMENT'|translate}}
+      </h5>
+      <p class="text-center">
+        {{'CAREERS.CAREERS_TITLE' |translate}}
+
+      </p>
+    </div>
+  </div>
+  <div class="color">
+    <div class="container job-form">
+      <div class="job-form-header text-center pb-4">
+        <h4>Get A Job NOW !</h4>
+      </div>
+      <form #varform="ngForm" ngSubmit="subFormCareer(varform)">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <i class="fas fa-user-astronaut"></i>
+              <label>{{'CAREERS.USERNAME_INPUT' |translate}}</label>
+              <input ngModel #fullname="ngModel" name="full_name" type="text"
+                class="form-control"
+                (keypress)="keyPressStr($event)"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_FULLNAME' |translate}}" required>
+              <p *ngIf="fullname.touched && fullname.invalid"
+                style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_FULLNAME' |translate}}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <i class="far fa-envelope-open"></i>
+              <label>
+                {{'CAREERS.EMAIL_INPUT' |translate}}
+              </label>
+              <input ngModel #email="ngModel" name="email" type="text"
+                class="form-control"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_EMAIL' |translate}}" required email>
+              <p *ngIf="email.touched && email.errors?.required"
+                style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_EMAIL' |translate}}</p>
+              <p *ngIf="email.touched && email.errors?.email"
+                style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_EMAIL_2' |translate}}
+              </p>
+            
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <i class="fas fa-mobile-alt"></i>
+              <label>
+                {{'CAREERS.MOBILE_INPUT' |translate}}
+              </label>
+              <input ngModel #phone="ngModel" name="phone" type="text"
+                class="form-control"
+                placeholder="{{'CONTACTUS.PLACEHOLDER_MOBILE_NUMBER'
+                |translate}}"
+                (keypress)="keyPressNum($event)" required minlength="5" maxlength="15">
+                <p *ngIf="phone.invalid && phone.touched" style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_PHONE' |translate}}</p>
+                <p *ngIf="phone.invalid && phone.touched &&
+                  phone.errors?.minlength" style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_PHONE_2' |translate}}</p>
+                <p *ngIf="phone.invalid && phone.touched &&
+                  phone.errors?.maxlength" style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_PHONE_3' |translate}}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <i class="fas fa-book"></i>
+              <label>
+                {{'CAREERS.JOB_INPUT' |translate}}
+              </label>
+              <input class="form-control"
+                placeholder="{{'CAREERS.CAREERS_JOB_TITLE_PLACEHOLDER'
+                |translate}}"
+                name="career" ngModel #career="ngModel" value="career" required>
+                <p *ngIf="career.invalid && career.touched" style="color:#ff7878">{{'CAREERS.MSG_JOP_VALIDATE' |translate}}</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <textarea ngModel #message="ngModel" name="bio" rows="8"
+                placeholder="{{'CAREERS.CAREERS_TEXTAREA_PLACEHOLDER'
+                |translate}}" minlength="50"
+                maxlength="250" required></textarea>
+              <p *ngIf="message.invalid && message.touched &&
+                message.errors?.required" style="color:#ff7878"> {{'CONTACTUS.ERORR_MSG_MSG_HELP' |translate}}</p>
+              <p *ngIf="message.invalid && message.touched &&
+                message.errors?.minlength" style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_MSG_HELP_2' |translate}}</p>
+              <p *ngIf="message.invalid && message.touched &&
+                message.errors?.maxlenth" style="color:#ff7878">{{'CONTACTUS.ERORR_MSG_MSG_HELP_3' |translate}}</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="custom-file">
+              <input ngModel #cv="ngModel" name="cv" type="file"
+                class="custom-file-input"
+                (change)="handleFileInput($event)" accept=".pdf, .docx">
+              <label class="custom-file-label text-left" for="customFile">{{'CAREERS.UPLOAD_CV' |translate}}
+                {{labelText}}</label>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <button class="primary-btn" (click)="subFormCareer(varform)"
+              type="submit">
+              {{'CAREERS.CAREERS_BUTTON' |translate}}
+            </button>
+          </div>
+        </div>
+      </form>
+      <!-- end of row -->
+    </div>
+  </div>
+</section>

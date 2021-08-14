@@ -1,0 +1,255 @@
+@import "../../../styles.scss";
+
+
+a {
+  cursor: pointer;
+  font-size: 16px !important;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+footer {
+  padding-top: 3rem;
+  background-color: black;
+
+  hr {
+    background: #999999;
+  }
+
+  .footer-about-content,
+  .footer-contact-content,
+  .footer-callus-content {
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .footer-about-content h4,
+  .footer-contact-content h4,
+  .footer-callus-content h4 {
+    font-weight: 600 !important;
+    font-size: 22px;
+  }
+
+  .footer-about-content a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  .footer-callus-content h2 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  form {
+    label {
+      font-weight: 600;
+      color: white;
+      font-size: 22px;
+      margin-bottom: 1rem;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 10px 0.75rem;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: $medium;
+      color: #666666;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 0px;
+      border-radius: 0px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    color: white;
+
+    a {
+      font-weight: $medium;
+      font-size: 11px;
+      color: white;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    span {
+      font-size: 16px;
+      margin: 0px 30px;
+    }
+  }
+
+  .right {
+    ul {
+      list-style-type: none;
+      text-align: right;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        font-size: 18px;
+        color: white;
+        margin-left: 20px;
+        a
+        {
+        color: white;
+
+        }
+      }
+    }
+  }
+
+  .social-mob {
+    display: none;
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+      text-align: center;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        font-size: 18px;
+        color: white;
+        margin: 0px 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+
+
+    .primary-btn {
+      width: 100% !important;
+    }
+
+    .navbar-brand {
+      display: block;
+
+      img {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    form label {
+      font-size: 16px;
+      margin: 10px 0px;
+      margin-top: 3rem;
+    }
+
+    hr {
+      display: none;
+    }
+
+    .novo-btn {
+      width: 100%;
+      margin: 10px 0px;
+    }
+
+    .social-mob {
+      display: block;
+    }
+
+    .right {
+      display: none;
+    }
+
+    .left {
+      text-align: center;
+      flex-direction: column;
+
+      a {
+        font-weight: normal;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .footer-about-content h4,
+  .footer-contact-content h4,
+  .footer-callus-content h4 {
+    margin-top: 3rem;
+  }
+
+ 
+  .footer-callus-content {
+    text-align: center;
+  }
+
+  .arabic-font-footer footer .col-xl-5 {
+    order: 2;
+  }
+}
+
+.footer-contact-content a{
+  color: #ffff;
+  &:hover {
+    color: $primaryColor;
+    transition: all 0.2s ease-in-out;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  footer {
+    .sitemap {
+      margin: 20px 0px;
+    }
+
+    .navbar-brand {
+      display: block;
+      margin: auto;
+    }
+
+    .right {
+      ul {
+        text-align: left;
+      }
+
+      li {
+        margin-left: 0px !important;
+        margin-right: 20px;
+        margin-top: 20px;
+      }
+    }
+    .subscribe-box {
+      margin: 0;
+      padding: 0 15px;
+    }
+  }
+
+  form label {
+    font-size: 16px;
+    margin: 10px 0px;
+    margin-top: 3rem;
+  }
+
+  .footer-about-content h4,
+  .footer-contact-content h4,
+  .footer-callus-content h4 {
+    margin-top: 3rem;
+  }
+}

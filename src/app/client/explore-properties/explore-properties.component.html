@@ -1,0 +1,32 @@
+<section class="about-section explore">
+  <div class="section-header container-fluid" [ngStyle]="{'background-image': 'url(' + project_id.image + ')'}">
+    <div class="overlay"></div>
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="development-history container">
+    <div class="row">
+      <div class="col-lg-6 order-one">
+        <div class="development-history-containt">
+          <p>{{ description }}</p>
+          <h3>{{ subtitle }}</h3>
+          <p>{{ description2 }}</p>
+
+          <ul *ngIf="project_id.id == 2">
+            <label>{{ list_title }}</label>
+            <li *ngFor="let list of list_li;let i = index">
+              {{ list }}
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-lg-6 order-two">
+        <div class="development-history-img" [ngStyle]="{'background-image': 'url(' + project_id.image + ')'}">
+
+        </div>
+      </div>
+      <!-- end of row  -->
+    </div>
+  </div>
+
+</section>
