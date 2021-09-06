@@ -64,7 +64,7 @@ export class Globals {
           "يقع في منطقة شمال بيت الوطن التي تعتبر بقعة ذهبية في القاهرة الجديدة ، على بعد دقائق من طريق السويس و 90 طريق ، بالقرب من منطقة العرض ومنطقة الأندية. موقع برايم وان يُعتبر موقعًا متميزًا به حديقة ذات إطلالة فريدة في بيت الوطن.",
         lunch_str: "موعد التسليم فى",
         lunch_date: "٢٠٢٢",
-        location: "شمال بيت الوطن - القاهرة الجديدة",
+        location: "بيت الوطن التكملية - القاهرة الجديدة",
       },
       english: {
         title: "264-A",
@@ -72,7 +72,7 @@ export class Globals {
           "Located at North Beit Alwatan area which considered as golden spot in new cairo, minutes from suez road & 90 road, close to view zone & clubs area. Prime one location perceived as a prime which it has a unique view garden at beit al watan.",
           lunch_str: "Delivery in",
           lunch_date: "2022",
-        location: "North Beit Alwatan - New Cairo",
+        location: "Beit El Watan ElTakmylia - New Cairo",
       },
       main_location:
         "../../../assets/img/Project/003_264_A/264-A-main-location.jpg",
@@ -126,7 +126,7 @@ export class Globals {
           "يقع Eminence على طريق شمال بيت الوطن جنوب السويس ، على بعد دقائق من 90 طريق ومنطقة خدمات ، Eminence به مرافق فريدة مثل منطقة اللياقة البدنية ومنطقة الأطفال والقمر الصناعي المركزي والمدخل الفريد والاتصال الداخلي والمصعد.",
           lunch_str: "موعد التسليم فى",
           lunch_date: "٢٠٢٢",
-          location: "شمال بيت الوطن - القاهرة الجديدة",
+          location: "بيت الوطن التكملية - القاهرة الجديدة",
       },
       english: {
         title: "138-139B",
@@ -134,7 +134,7 @@ export class Globals {
           "Eminence located at north beit al watan “South suez road”, minutes from 90 road & services area, Eminence has unique facilities like Fitness area , kids area , central satellite , unique entrance , intercom and elevator.",
           lunch_str: "Delivery in",
           lunch_date: "2022",
-        location: "North Beit Alwatan - New Cairo",
+        location: "Beit El Watan ElTakmylia - New Cairo",
       },
       main_location:
         "../../../assets/img/Project/002-138-139B/139-b-main-location.jpg",
@@ -185,7 +185,7 @@ export class Globals {
           "بصرف النظر عن المجمع المصغر العادي الموجود في بيت الوطن ، يقدم بريميوم وان لسكانه مرافق سكنية فاخرة مع أنواع وحدات مختلفة تستجيب لطلب السوق السكنية.",
           lunch_str: "موعد التسليم فى",
           lunch_date: "٢٠٢٢",
-          location: "شمال بيت الوطن - القاهرة الجديدة",
+          location: "الحي الأول - بيت الوطن - القاهرة الجديدة",
       },
       english: {
         title: "26-F",
@@ -193,7 +193,7 @@ export class Globals {
           "Apart from the ordinary mini compound being in the Beit Al watan, Premium one offers its residents with premium facilities residential community with different units’ types responding to the residential market demand.",
           lunch_str: "Delivery in",
           lunch_date: "2022",
-        location: "North Beit Alwatan - New Cairo",
+        location: "1st District - Beit El Watan - New Cairo",
       },
       main_location:
         "../../../assets/img/Project/004_26_F/26-f-main-location.jpg",
@@ -253,7 +253,7 @@ export class Globals {
           "خطوات من منطقه الفيو زون التى تربط مابين 'بيت الوطن' أرقى مناطق التجمع الخامس والعاصمه الاداريه الجديده ودقائق الى اهم المحاور الرئيسيه التى تربط القاهره.",
         lunch_str: "موعد التسليم فى",
         lunch_date: "٢٠٢٣",
-        location: "مصر الجديدة",
+        location: "النرجس الجديدة - القاهرة الجديدة",
       },
       english: {
         title: "149-G",
@@ -261,7 +261,7 @@ export class Globals {
           "One step from view zone, The access point between new cairo & new capital, minutes to reach main highways.",
         lunch_str: "Delivery in",
         lunch_date: "2023",
-        location: "New Cario",
+        location: "New Narges - New Cario",
       },
       main_location:
         "../../../assets/img/Project/005_149_New-Narges/149-G-main-location.jpg",
@@ -314,7 +314,7 @@ export class Globals {
           "خطوات من منطقه الفيو زون التى تربط مابين 'بيت الوطن' أرقى مناطق التجمع الخامس والعاصمه الاداريه الجديده ودقائق الى اهم المحاور الرئيسيه التى تربط القاهره.",
           lunch_str: "موعد التسليم فى",
           lunch_date: "٢٠٢٢",
-          location: "مصر الجديدة",
+          location: "الحي الخامس - بيت الوطن - القاهرة الجديدة",
       },
       english: {
         title: "19-O",
@@ -322,7 +322,7 @@ export class Globals {
           "One step from view zone, The access point between new cairo & new capital, minutes to reach main highways.",
         lunch_str: "Delivery in",
         lunch_date: "2022",
-        location: "New Cairo",
+        location: "5th District - Beit El Watan - New Cairo",
       },
       main_location: "../../../assets/img/Project/map-location/19-o-main.jpg",
       main_view: "../../../assets/img/Project/001_19_O/19O.jpg",
