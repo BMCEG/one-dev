@@ -11,7 +11,7 @@ class Contact(views.APIView):
   def post(self, request, *args, **kwargs):
     try:
       data = request.data
-      subject, from_email, to = 'Customer Message', 'info@dari.life', 'onedevrealestate@gmail.com'
+      subject, from_email, to = 'One Dev Reservations', 'ali_moneib@yahoo.com', 'ali.moneib@gmail.com'
       text_content = data['message']
       html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
                      ' <div style="padding-bottom: 20px;"></div>' \
@@ -39,6 +39,7 @@ class Contact(views.APIView):
       msg.send()
       return Response({'error': False})
     except Exception as e:
+      print ({'error': str(e)})
       return Response({'error': str(e)})
 
 
