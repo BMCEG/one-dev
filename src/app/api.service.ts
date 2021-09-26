@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class ApiService {
-  baseURL = 'http://localhost:8000'; //add url here bor3y
+  baseURL = 'http://139.162.181.170:8000'; //add url here bor3y
   // baseURL = "https://one-dev.com";
   git
   baseImageURL = this.baseURL + "/";
