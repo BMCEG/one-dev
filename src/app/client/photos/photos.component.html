@@ -1,84 +1,103 @@
 <section class="photos-section">
-  <div class="  photos">
+  <div class="photos">
     <div class="overlay"></div>
     <!-- <div class="layout"></div> -->
     <div class="video-bg">
       <video autoplay muted loop id="myVideo">
-        <source src="../../../assets/videos/media.mp4" type="video/mp4">
-      </video> 
+        <source src="../../../assets/videos/media.mp4" type="video/mp4" />
+      </video>
     </div>
-    
-    <!-- <h1 class="overlay-title">{{'PROJECTS.Government_DEVELOPMENTS_HEADER' |translate}}</h1> -->
-      <a id="scroll" class="primary-link white"><img
-          src="../../assets/img/secLink.svg"> {{'HOME.SCROLL_BTN' |translate}}
-      </a>
-  </div>
- 
 
+    <!-- <h1 class="overlay-title">{{'PROJECTS.Government_DEVELOPMENTS_HEADER' |translate}}</h1> -->
+    <a id="scroll" class="primary-link white"
+      ><img src="../../assets/img/secLink.svg" />
+      {{ "HOME.SCROLL_BTN" | translate }}
+    </a>
+  </div>
 
   <section class="videos-section container-fluid">
-    <div class="videos">
-
-    </div>
+    <div class="videos"></div>
 
     <div class="my-3">
       <div class="row d-flex justify-content-center">
-        <div class="col-xl-4 col-md-6 my-2" *ngFor="let video of videos; let i=
-          index">
-          <div class="video-container" data-toggle="modal"
-            data-target="#videoOne" (click)="global.modalData(i)">
+        <div
+          class="col-xl-4 col-md-6 my-2"
+          *ngFor="let video of videos; let i = index"
+        >
+          <div
+            class="video-container"
+            data-toggle="modal"
+            data-target="#videoOne"
+            (click)="global.modalData(i)"
+          >
             <i class="fas fa-play-circle"></i>
-            <video [poster]="video.poster" class="hover" style="width: 100%;
-              height: 100%;"
-              [src]="video.modal_video"></video>
+            <video
+              [poster]="video.poster"
+              class="hover"
+              style="width: 100%; height: 100%"
+              [src]="video.modal_video"
+            ></video>
           </div>
         </div>
         <!-- models -->
 
-        <div class="modal fade" id="videoOne" tabindex="-1" role="dialog"
+        <div
+          class="modal fade"
+          id="videoOne"
+          tabindex="-1"
+          role="dialog"
           aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                  aria-label="Close">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body" *ngIf="global.modalVideo">
-                <div *ngIf="global.currentVideo ===
-                  global.videos[0].modal_video">
+                <div
+                  *ngIf="global.currentVideo === global.videos[0].modal_video"
+                >
                   <video controls class="service-video">
-                    <source [src]="global.currentVideo" type="video/mp4">
+                    <source [src]="global.currentVideo" type="video/mp4" />
                   </video>
                 </div>
-                <div *ngIf="global.currentVideo ===
-                  global.videos[1].modal_video">
+                <div
+                  *ngIf="global.currentVideo === global.videos[1].modal_video"
+                >
                   <video controls class="service-video">
-                    <source [src]="global.currentVideo" type="video/mp4">
+                    <source [src]="global.currentVideo" type="video/mp4" />
                   </video>
                 </div>
-                <div *ngIf="global.currentVideo ===
-                  global.videos[2].modal_video">
+                <div
+                  *ngIf="global.currentVideo === global.videos[2].modal_video"
+                >
                   <video controls class="service-video">
-                    <source [src]="global.currentVideo" type="video/mp4">
+                    <source [src]="global.currentVideo" type="video/mp4" />
                   </video>
                 </div>
-                <div *ngIf="global.currentVideo ===
-                  global.videos[3].modal_video">
+                <div
+                  *ngIf="global.currentVideo === global.videos[3].modal_video"
+                >
                   <video controls class="service-video">
-                    <source [src]="global.currentVideo" type="video/mp4">
+                    <source [src]="global.currentVideo" type="video/mp4" />
                   </video>
                 </div>
-                <div *ngIf="global.currentVideo ===
-                  global.videos[4].modal_video">
+                <div
+                  *ngIf="global.currentVideo === global.videos[4].modal_video"
+                >
                   <video controls class="service-video">
-                    <source [src]="global.currentVideo" type="video/mp4">
+                    <source [src]="global.currentVideo" type="video/mp4" />
                   </video>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -87,10 +106,6 @@
 
         <!-- end of row  -->
       </div>
-
     </div>
   </section>
-
-
-
 </section>
