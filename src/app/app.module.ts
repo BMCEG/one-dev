@@ -30,7 +30,9 @@ import { CareersComponent } from './client/careers/careers.component';
 import { DevelopmentsCommercialComponent } from './client/developments-commercial/developments-commercial.component';
 import { InstitutesComponent } from './client/institutes/institutes.component';
 import { GovernmentComponent } from './client/government/government.component';
-
+import { Landing138Component } from './client/landing-138-139b/landing.component';
+import { LandingC273Component } from './client/landing-C-273/landing.component';
+import { LandingD124Component } from './client/landing-D-124/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,9 @@ import { GovernmentComponent } from './client/government/government.component';
     DevelopmentsCommercialComponent,
     InstitutesComponent,
     GovernmentComponent,
+    Landing138Component,
+    LandingC273Component,
+    LandingD124Component
 
   ],
   imports: [

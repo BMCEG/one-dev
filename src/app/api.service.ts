@@ -20,6 +20,13 @@ export class ApiService {
     });
   }
 
+
+  addLandingContactUs(data): Observable<any> {
+    return this.http.post(this.baseURL + "/api/send-landing-message/", data, {
+      headers: this.httpHeaders
+    });
+  }
+
   addResereUnit(data): Observable<any> {
     return this.http.post(this.baseURL + "/api/send-reserve/", data, {
       headers: this.httpHeaders

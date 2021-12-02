@@ -11,8 +11,8 @@ class Contact(views.APIView):
   def post(self, request, *args, **kwargs):
     try:
       data = request.data
-      subject, from_email, to = 'One Dev Reservations', 'ali_moneib@yahoo.com', 'ali.moneib@gmail.com'
-      text_content = data['message']
+      subject, from_email, to = 'One Dev Reservations', 'ali_moneib@yahoo.com', 'ali_moneib@yahoo.com'
+      text_content = "data['message']"
       html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
                      ' <div style="padding-bottom: 20px;"></div>' \
                      '<h2 class="" style="font-family: bold_bw;">Contact Message</h2> </div>' \
@@ -39,6 +39,39 @@ class Contact(views.APIView):
       msg.send()
       return Response({'error': False})
     except Exception as e:
+      print ({'error': str(e)})
+      return Response({'error': str(e)})
+
+class LandingContact(views.APIView):
+  def post(self, request, *args, **kwargs):
+    try:
+      data = request.data
+      subject, from_email, to = 'One Dev Reservations', 'ali_moneib@yahoo.com', 'ali_moneib@yahoo.com'
+      text_content = ""
+      html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
+                     ' <div style="padding-bottom: 20px;"></div>' \
+                     '<h2 class="" style="font-family: bold_bw;">Landing Contact Message</h2> </div>' \
+                     '<div class="" style="padding: 40px 0; text-align: center;">' \
+                     '<h3 class="email-headers" style="font-family: ub_medium !important; color: #ffffff; ' \
+                     'margin-bottom: 20px; background: #363636; color: white; padding: 15px; width: 50%;' \
+                     ' margin: auto;"> Name</h3> <h3>' + data['full_name'] + '</h3>' \
+                                                                             '<h3 style="font-family: ub_medium !important; color: #ffffff; margin-bottom: 20px;' \
+                                                                             ' background: #363636; color: white; padding: 15px; width: 50%; margin: auto;">' \
+                                                                             'E-mail</h3> <h3>' + data[
+                       'email'] + '</h3>' \
+                                  '<h3 style="font-family: ub_medium !important; color: #ffffff; margin-bottom: 20px;' \
+                                  ' background: #363636; color: white; padding: 15px; width: 50%; margin: auto;">' \
+                                  'Mobile Number</h3> <h3>' + \
+                     data['phone'] + '</h3>' \
+                                     '</div>' \
+                                                                                                     '<div class="" style="text-align: center;"> <div class="meta__help">' \
+                                                                                                     '</div> </div>'
+      msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+      msg.attach_alternative(html_content, "text/html")
+      msg.send()
+      return Response({'error': False})
+    except Exception as e:
+      print("HELLO WORLD")
       print ({'error': str(e)})
       return Response({'error': str(e)})
 

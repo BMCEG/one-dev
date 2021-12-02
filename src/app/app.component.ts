@@ -46,6 +46,11 @@ export class AppComponent {
       $('.navbar-collapse').show();
     }
 
+    if(window.location.pathname.indexOf("/landing/") == 0){
+      $('.navbar').hide();
+      document.querySelector("body > app-root > app-footer").remove();
+    }
+
     $('.mobile-toggle').click(function () {
       $('.navbar').toggleClass('side-nav-open');
     });
