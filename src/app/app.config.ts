@@ -462,8 +462,8 @@ export class Globals {
     {
       modal_video: "../../../assets/videos/one_1.mp4",
       poster: "../../../assets/videos/one_1.png",
-    },{
-
+    },
+    {
       modal_video: "../../../assets/videos/show-reel.mp4",
       poster: "../../../assets/videos/show-reel.png",
     },
