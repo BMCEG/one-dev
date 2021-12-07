@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class ApiService {
   // baseURL = 'http://localhost:8000'; //add url here bor3y
-  baseURL = "https://one-dev.com";
+  baseURL = "https://139.162.181.170";
   git
   baseImageURL = this.baseURL + "/";
   httpHeaders = new HttpHeaders({ "Content-type": "application/json" });
