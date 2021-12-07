@@ -35,117 +35,7 @@
       <!-- </div> -->
     </div>
     <!-- <div class="row"> -->
-    <div class="development-history container">
-      <div class="col-xl-12">
-        <div class="development-history-containt">
-          <h3>{{ "LANDING.CONTACT" | translate }}</h3>
-        </div>
-        <div class="form-body">
-          <form
-            id="ContactUs-Form"
-            #varform="ngForm"
-            ngSubmit="subForm(varform)"
-          >
-            <div class="form-group">
-              <input
-                ngModel
-                #fullname="ngModel"
-                name="full_name"
-                type="text"
-                class="form-control"
-                id="name"
-                placeholder="{{ 'CONTACTUS.PLACEHOLDER_FULLNAME' | translate }}"
-                required
-                (keypress)="keyPressStr($event)"
-              />
-              <p
-                *ngIf="fullname.invalid && fullname.touched"
-                style="color: #ff7878"
-              >
-                {{ "CONTACTUS.ERORR_MSG_FULLNAME" | translate }}
-              </p>
-            </div>
 
-            <div class="form-group">
-              <input
-                ngModel
-                #phone="ngModel"
-                name="phone"
-                type="tel"
-                class="form-control"
-                id="phone"
-                placeholder="{{
-                  'CONTACTUS.PLACEHOLDER_MOBILE_NUMBER' | translate
-                }}"
-                required
-                minlength="5"
-                maxlength="15"
-                (keypress)="keyPressNum($event)"
-              />
-              <p *ngIf="phone.invalid && phone.touched" style="color: #ff7878">
-                {{ "CONTACTUS.ERORR_MSG_PHONE" | translate }}
-              </p>
-              <p
-                *ngIf="
-                  phone.invalid && phone.touched && phone.errors?.minlength
-                "
-                style="color: #ff7878"
-              >
-                {{ "CONTACTUS.ERORR_MSG_PHONE_2" | translate }}
-              </p>
-              <p
-                *ngIf="
-                  phone.invalid && phone.touched && phone.errors?.maxlength
-                "
-                style="color: #ff7878"
-              >
-                {{ "CONTACTUS.ERORR_MSG_PHONE_3" | translate }}
-              </p>
-            </div>
-            <div class="form-group">
-              <input
-                ngModel
-                #email="ngModel"
-                name="email"
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="{{ 'CONTACTUS.PLACEHOLDER_EMAIL' | translate }}"
-                email
-              />
-              <p
-                *ngIf="email.touched && email.errors?.required"
-                style="color: #ff7878"
-              >
-                {{ "CONTACTUS.ERORR_MSG_EMAIL" | translate }}
-              </p>
-              <p
-                *ngIf="email.touched && email.errors?.email"
-                style="color: #ff7878"
-              >
-                {{ "CONTACTUS.ERORR_MSG_EMAIL_2" | translate }}
-              </p>
-            </div>
-
-            <button
-              [disabled]="varform.invalid"
-              (click)="subForm(varform)"
-              type="submit"
-              class="primary-btn submit"
-              id="btn-sub"
-            >
-              {{ "CONTACTUS.BTN_SUBMIT" | translate }}
-            </button>
-            <div *ngIf="!showMsg">
-              <p *ngFor="let e of errorMsg | keyvalue" style="color: #ff7878">
-                *{{ e.key | titlecase }}{{ e.value[0] | titlecase }}
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
-      <br />
-    </div>
     <!-- </div> -->
 
     <div class="col-lg-12">
@@ -157,11 +47,68 @@
         Developments and Constructions
       </h2>
       <div class="development-history-containt">
-        <h3>
-          هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي
-          القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة
-          التي يقرأها.
-        </h3>
+        <br />
+        <h5>
+          • موقع النرجس الجديدة – التجمع الخامس – القاهرة الجديدة.
+          <br />
+          • تقع النرجس الجديدة علي محور محمد نجيب بجوار حهاز مدينة القاهرة
+          الجديدة والجامعة الألمانية و مسجد فاطمة الشربلي، ودقائق من شارع
+          التسعين الجنوبي.
+          <br />
+          • مكان راقي للعيش وييعتبر مجتمع استثنائي المواصفات عناصر الراحة
+          والخدمات تناسب كافة الاحتياجات المختلفة.
+          <br />
+          <br />
+        </h5>
+        <h3>المشروع:</h3>
+        <!-- <br /> -->
+        <h5>
+          • يقدم مجموعة مختلفة من المساحات للوحدات.
+          <br />
+          • كل الوحدات لها مساحة مخصصة بالجراج ومخزن.
+          <br />
+          • يقع المشروع على حدائق ومحاور رئيسية و قريبة من جميع الخدمات.
+          <br />
+          • تصميم عصري للواجهات ومواصفات تشطيب علي اعلي مستوي - بوابات بالريموت
+          - دش مركزي – اسانسيرات – مداخل فاخرة رخام – خزانات مياة – انتركم مرئي
+          وغيرها من الخدمات المميزة
+          <br />
+          <br />
+        </h5>
+        <h3>الشركة:</h3>
+
+        <!-- <br /> -->
+        <h5>
+          • اكثر من ٤٠ عامل خبر في التطوير العقاري. في تطوير العديد من المشروعات
+          السكنية في كثير من مدن واحياء القاهرة المختلفة، مشروعات وابراج سكنية
+          في مصر الجديدة ومدينة نصر والمعادي ومن بعدهم المدن الجديدة وابرزها
+          القاهرة الجديدة.
+          <br />
+          • تطوير اكثر من ٢٥ مشروع بالتجمع الخامس بالقاهرة الجديدة بالنرجس
+          الجديدة وبيت الوطن
+          <br />
+          • تعد احد اهم اذرع المقاولات في كثير من المشروعات القومية المصرية تحت
+          مظلة الأمانة العامة للقوات المسلحة المصرية.
+          <br />
+          • صاحبة عباءة مالية بحجم استثمارات في مختلف القطاعات منها التعليمي
+          بسلسلة مدارس سينا سكول ومعاهد العلوم التجارية والحاسب الالي
+          بالإسماعيلية والعريش وأخيرا المدرسة البريطانية الدولية بالعاصمة
+          الإدارية الجدية.
+          <br />
+          • تطوير باقة من المشروعات التجارية والإدارية بالعاصمة الإدارية الجديدة
+          منها مشروع كابيتال برايم والذي يعد ايقونة منطقة ال MU23
+          <br />
+          <br />
+        </h5>
+        <h3>خطط السداد والتقسيط:</h3>
+        <h5>
+          <!-- <br /> -->
+          • مقدم يبدأ من 15% مقدم وأنظمة سداد متساوية تصل إلي 6 سنوات.
+          <br />
+          للإتصال: 16251 او 01114888783
+          <br />
+        </h5>
+        <!-- </h3> -->
       </div>
       <br />
       <br />
@@ -219,6 +166,110 @@
       <br />
       <br />
     </div>
+  </div>
+  <div class="development-history container">
+    <div class="col-xl-12">
+      <div class="development-history-containt">
+        <h3>{{ "LANDING.CONTACT" | translate }}</h3>
+      </div>
+      <div class="form-body">
+        <form id="ContactUs-Form" #varform="ngForm" ngSubmit="subForm(varform)">
+          <div class="form-group">
+            <input
+              ngModel
+              #fullname="ngModel"
+              name="full_name"
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="{{ 'CONTACTUS.PLACEHOLDER_FULLNAME' | translate }}"
+              required
+              (keypress)="keyPressStr($event)"
+            />
+            <p
+              *ngIf="fullname.invalid && fullname.touched"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_FULLNAME" | translate }}
+            </p>
+          </div>
+
+          <div class="form-group">
+            <input
+              ngModel
+              #phone="ngModel"
+              name="phone"
+              type="tel"
+              class="form-control"
+              id="phone"
+              placeholder="{{
+                'CONTACTUS.PLACEHOLDER_MOBILE_NUMBER' | translate
+              }}"
+              required
+              minlength="5"
+              maxlength="15"
+              (keypress)="keyPressNum($event)"
+            />
+            <p *ngIf="phone.invalid && phone.touched" style="color: #ff7878">
+              {{ "CONTACTUS.ERORR_MSG_PHONE" | translate }}
+            </p>
+            <p
+              *ngIf="phone.invalid && phone.touched && phone.errors?.minlength"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_PHONE_2" | translate }}
+            </p>
+            <p
+              *ngIf="phone.invalid && phone.touched && phone.errors?.maxlength"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_PHONE_3" | translate }}
+            </p>
+          </div>
+          <div class="form-group">
+            <input
+              ngModel
+              #email="ngModel"
+              name="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="{{ 'CONTACTUS.PLACEHOLDER_EMAIL' | translate }}"
+              email
+            />
+            <p
+              *ngIf="email.touched && email.errors?.required"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_EMAIL" | translate }}
+            </p>
+            <p
+              *ngIf="email.touched && email.errors?.email"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_EMAIL_2" | translate }}
+            </p>
+          </div>
+
+          <button
+            [disabled]="varform.invalid"
+            (click)="subForm(varform)"
+            type="submit"
+            class="primary-btn submit"
+            id="btn-sub"
+          >
+            {{ "CONTACTUS.BTN_SUBMIT" | translate }}
+          </button>
+          <div *ngIf="!showMsg">
+            <p *ngFor="let e of errorMsg | keyvalue" style="color: #ff7878">
+              *{{ e.key | titlecase }}{{ e.value[0] | titlecase }}
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br />
+    <br />
   </div>
   <!-- <div class="row map-row-item">
     <div class="col-lg-6">

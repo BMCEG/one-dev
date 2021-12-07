@@ -11,7 +11,7 @@ class Contact(views.APIView):
   def post(self, request, *args, **kwargs):
     try:
       data = request.data
-      subject, from_email, to = 'One Dev Reservations', 'ali_moneib@yahoo.com', 'ali_moneib@yahoo.com'
+      subject, from_email, to = 'One Dev Reservations', '1onedevelopments@gmail.com', '1onedevelopments@gmail.com'
       text_content = "data['message']"
       html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
                      ' <div style="padding-bottom: 20px;"></div>' \
@@ -46,7 +46,7 @@ class LandingContact(views.APIView):
   def post(self, request, *args, **kwargs):
     try:
       data = request.data
-      subject, from_email, to = 'One Dev Reservations', 'ali_moneib@yahoo.com', 'ali_moneib@yahoo.com'
+      subject, from_email, to = 'One Dev Reservations', '1onedevelopments@gmail.com', '1onedevelopments@gmail.com'
       text_content = ""
       html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
                      ' <div style="padding-bottom: 20px;"></div>' \
