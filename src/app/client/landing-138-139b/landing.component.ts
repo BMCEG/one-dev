@@ -49,7 +49,8 @@ export class Landing138Component implements OnInit {
     this.api.addLandingContactUs(form.value).subscribe(
       data => {
         form.reset();
-        window.scrollTo(0, 0);
+        window.location.href ='/landing/success';
+        // window.scrollTo(0, 0);
         this.showMsg = true;
       },
       error => {

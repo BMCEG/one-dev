@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingD124Component implements OnInit {
+export class LandingSuccess implements OnInit {
   arabic = true;
 
   showMsg = false;

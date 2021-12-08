@@ -17,6 +17,7 @@ import { GovernmentComponent } from '../client/government/government.component';
 import { Landing138Component } from '../client/landing-138-139b/landing.component';
 import { LandingD124Component } from '../client/landing-D-124/landing.component';
 import { LandingC273Component } from '../client/landing-C-273/landing.component';
+import { LandingSuccess } from '../client/landing-success/landing.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'ONE', depth: 1 } },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'landing/138-139B', component: Landing138Component, data: { title: false, depth: 14 } },
   { path: 'landing/D-124', component: LandingD124Component, data: { title: false, depth: 15 } },
   { path: 'landing/C-237', component: LandingC273Component, data: { title: false, depth: 16 } },
+  { path: 'landing/success', component: LandingSuccess, data: { title: false, depth: 17 } },
 ];
 
 @NgModule({
