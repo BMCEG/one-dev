@@ -6,8 +6,8 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class ApiService {
-  // baseURL = 'http://localhost:8000'; //add url here bor3y
-  baseURL = "https://one-dev.com";
+  baseURL = 'http://localhost:8000'; //add url here bor3y
+  // baseURL = "https://one-dev.com";
   git
   baseImageURL = this.baseURL + "/";
   httpHeaders = new HttpHeaders({ "Content-type": "application/json" });
@@ -19,6 +19,7 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
+
 
   addLandingContactUs(data): Observable<any> {
     return this.http.post(this.baseURL + "/api/send-landing-message/", data, {

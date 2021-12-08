@@ -5,7 +5,17 @@ from .models import Newsletter
 import base64
 from django.core.files.base import ContentFile
 from .models import CV
-
+from oauth2client.service_account import ServiceAccountCredentials
+import gspread
+import json
+scopes = [
+'https://www.googleapis.com/auth/spreadsheets',
+'https://www.googleapis.com/auth/drive'
+]
+credentials = ServiceAccountCredentials.from_json_keyfile_name("emails.json", scopes) #access the json key you downloaded earlier 
+file = gspread.authorize(credentials) # authenticate the JSON key with gspread
+sheet = file.open("OneDev Data")  #open sheet
+sheet = sheet.sheet1  #replace sheet_name with the name that corresponds to yours, e.g, it can be sheet1
 
 class Contact(views.APIView):
   def post(self, request, *args, **kwargs):
@@ -46,29 +56,34 @@ class LandingContact(views.APIView):
   def post(self, request, *args, **kwargs):
     try:
       data = request.data
-      subject, from_email, to = 'One Dev Reservations', '1onedevelopments@gmail.com', '1onedevelopments@gmail.com'
-      text_content = ""
-      html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
-                     ' <div style="padding-bottom: 20px;"></div>' \
-                     '<h2 class="" style="font-family: bold_bw;">Landing Contact Message</h2> </div>' \
-                     '<div class="" style="padding: 40px 0; text-align: center;">' \
-                     '<h3 class="email-headers" style="font-family: ub_medium !important; color: #ffffff; ' \
-                     'margin-bottom: 20px; background: #363636; color: white; padding: 15px; width: 50%;' \
-                     ' margin: auto;"> Name</h3> <h3>' + data['full_name'] + '</h3>' \
-                                                                             '<h3 style="font-family: ub_medium !important; color: #ffffff; margin-bottom: 20px;' \
-                                                                             ' background: #363636; color: white; padding: 15px; width: 50%; margin: auto;">' \
-                                                                             'E-mail</h3> <h3>' + data[
-                       'email'] + '</h3>' \
-                                  '<h3 style="font-family: ub_medium !important; color: #ffffff; margin-bottom: 20px;' \
-                                  ' background: #363636; color: white; padding: 15px; width: 50%; margin: auto;">' \
-                                  'Mobile Number</h3> <h3>' + \
-                     data['phone'] + '</h3>' \
-                                     '</div>' \
-                                                                                                     '<div class="" style="text-align: center;"> <div class="meta__help">' \
-                                                                                                     '</div> </div>'
-      msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-      msg.attach_alternative(html_content, "text/html")
-      msg.send()
+      # subject, from_email, to = 'One Dev Reservations', '1onedevelopments@gmail.com', '1onedevelopments@gmail.com'
+      # text_content = ""
+      # html_content = '<div style="padding: 40px 0 30px 0;background-color: #363636;color: white;text-align: center;">' \
+      #                ' <div style="padding-bottom: 20px;"></div>' \
+      #                '<h2 class="" style="font-family: bold_bw;">Landing Contact Message</h2> </div>' \
+      #                '<div class="" style="padding: 40px 0; text-align: center;">' \
+      #                '<h3 class="email-headers" style="font-family: ub_medium !important; color: #ffffff; ' \
+      #                'margin-bottom: 20px; background: #363636; color: white; padding: 15px; width: 50%;' \
+      #                ' margin: auto;"> Name</h3> <h3>' + data['full_name'] + '</h3>' \
+      #                                                                        '<h3 style="font-family: ub_medium !important; color: #ffffff; margin-bottom: 20px;' \
+      #                                                                        ' background: #363636; color: white; padding: 15px; width: 50%; margin: auto;">' \
+      #                                                                        'E-mail</h3> <h3>' + data[
+      #                  'email'] + '</h3>' \
+      #                             '<h3 style="font-family: ub_medium !important; color: #ffffff; margin-bottom: 20px;' \
+      #                             ' background: #363636; color: white; padding: 15px; width: 50%; margin: auto;">' \
+      #                             'Mobile Number</h3> <h3>' + \
+      #                data['phone'] + '</h3>' \
+      #                                '</div>' \
+      #                                                                                                '<div class="" style="text-align: center;"> <div class="meta__help">' \
+      #                                                                                                '</div> </div>'
+      # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+      # msg.attach_alternative(html_content, "text/html")
+      # msg.send()
+      # sheet.update_acell('A1', data['full_name'])
+      # sheet.update_acell('B1', data['phone'])
+      # sheet.update_acell('C1', data['email'])
+      insertRow = [data['full_name'], data['phone'], data['email']]
+      sheet.append_row(insertRow)
       return Response({'error': False})
     except Exception as e:
       print("HELLO WORLD")
