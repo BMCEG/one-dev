@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'government', component: GovernmentComponent, data: { title: false, depth: 13 } },
   { path: 'landing/138-139B', component: Landing138Component, data: { title: false, depth: 14 } },
   { path: 'landing/D-124', component: LandingD124Component, data: { title: false, depth: 15 } },
-  { path: 'landing/C-273', component: LandingC273Component, data: { title: false, depth: 16 } },
+  { path: 'landing/C-237', component: LandingC273Component, data: { title: false, depth: 16 } },
 ];
 
 @NgModule({
