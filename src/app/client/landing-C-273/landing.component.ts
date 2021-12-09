@@ -44,7 +44,9 @@ export class LandingC273Component implements OnInit {
   }
 
   subForm(form) {
-
+    // this.someData = 'C-237';
+    console.log("FORM", form.value)
+    form.value.landing = 'C-237';
     this.showMsg = true;
     this.api.addLandingContactUs(form.value).subscribe(
       data => {

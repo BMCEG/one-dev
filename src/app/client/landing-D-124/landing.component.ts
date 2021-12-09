@@ -44,6 +44,7 @@ export class LandingD124Component implements OnInit {
   }
 
   subForm(form) {
+    form.value.landing = 'D-124';
 
     this.showMsg = true;
     this.api.addLandingContactUs(form.value).subscribe(

@@ -44,6 +44,7 @@ export class Landing138Component implements OnInit {
   }
 
   subForm(form) {
+    form.value.landing = 'B-138-139';
 
     this.showMsg = true;
     this.api.addLandingContactUs(form.value).subscribe(
