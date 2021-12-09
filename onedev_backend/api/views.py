@@ -16,6 +16,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name("landingForm.json
 file = gspread.authorize(credentials) # authenticate the JSON key with gspread
 sheet = file.open("OneDev Data")  #open sheet
 sheet = sheet.sheet1  #replace sheet_name with the name that corresponds to yours, e.g, it can be sheet1
+from datetime import datetime
 
 class Contact(views.APIView):
   def post(self, request, *args, **kwargs):
@@ -82,11 +83,15 @@ class LandingContact(views.APIView):
       # sheet.update_acell('A1', data['full_name'])
       # sheet.update_acell('B1', data['phone'])
       # sheet.update_acell('C1', data['email'])
-      insertRow = [data['full_name'], data['phone'], data['email']]
+
+      now = datetime.now()
+      date = now.strftime("%d/%m/%Y")
+      time = now.strftime("%H:%M:%S")
+
+      insertRow = [data['full_name'], data['phone'], data['email'], date, time]
       sheet.append_row(insertRow)
       return Response({'error': False})
     except Exception as e:
-      print("HELLO WORLD")
       print ({'error': str(e)})
       return Response({'error': str(e)})
 
