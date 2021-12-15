@@ -274,6 +274,110 @@
       />
     </div>
   </div>
+  <div class="development-history container">
+    <div class="col-xl-12">
+      <div class="development-history-containt">
+        <h3>{{ "LANDING.CONTACT" | translate }}</h3>
+      </div>
+      <div class="form-body">
+        <form id="ContactUs-Form" #varform="ngForm" ngSubmit="subForm(varform)">
+          <div class="form-group">
+            <input
+              ngModel
+              #fullname="ngModel"
+              name="full_name"
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="{{ 'CONTACTUS.PLACEHOLDER_FULLNAME' | translate }}"
+              required
+              (keypress)="keyPressStr($event)"
+            />
+            <p
+              *ngIf="fullname.invalid && fullname.touched"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_FULLNAME" | translate }}
+            </p>
+          </div>
+
+          <div class="form-group">
+            <input
+              ngModel
+              #phone="ngModel"
+              name="phone"
+              type="tel"
+              class="form-control"
+              id="phone"
+              placeholder="{{
+                'CONTACTUS.PLACEHOLDER_MOBILE_NUMBER' | translate
+              }}"
+              required
+              minlength="5"
+              maxlength="15"
+              (keypress)="keyPressNum($event)"
+            />
+            <p *ngIf="phone.invalid && phone.touched" style="color: #ff7878">
+              {{ "CONTACTUS.ERORR_MSG_PHONE" | translate }}
+            </p>
+            <p
+              *ngIf="phone.invalid && phone.touched && phone.errors?.minlength"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_PHONE_2" | translate }}
+            </p>
+            <p
+              *ngIf="phone.invalid && phone.touched && phone.errors?.maxlength"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_PHONE_3" | translate }}
+            </p>
+          </div>
+          <div class="form-group">
+            <input
+              ngModel
+              #email="ngModel"
+              name="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="{{ 'CONTACTUS.PLACEHOLDER_EMAIL' | translate }}"
+              email
+            />
+            <p
+              *ngIf="email.touched && email.errors?.required"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_EMAIL" | translate }}
+            </p>
+            <p
+              *ngIf="email.touched && email.errors?.email"
+              style="color: #ff7878"
+            >
+              {{ "CONTACTUS.ERORR_MSG_EMAIL_2" | translate }}
+            </p>
+          </div>
+
+          <button
+            [disabled]="varform.invalid"
+            (click)="subForm(varform)"
+            type="submit"
+            class="primary-btn submit"
+            id="btn-sub"
+          >
+            {{ "CONTACTUS.BTN_SUBMIT" | translate }}
+          </button>
+          <div *ngIf="!showMsg">
+            <p *ngFor="let e of errorMsg | keyvalue" style="color: #ff7878">
+              *{{ e.key | titlecase }}{{ e.value[0] | titlecase }}
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
 </section>
 <footer>
   <div class="container-fluid">
