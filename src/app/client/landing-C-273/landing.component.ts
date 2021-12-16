@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { Globals } from 'src/app/app.config';
 import { ApiService } from 'src/app/api.service';
 import { TranslateService } from '@ngx-translate/core';
+import { SlidesOutputData } from 'ngx-owl-carousel-o';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-landing',
@@ -16,6 +18,23 @@ export class LandingC273Component implements OnInit {
   showMsg = false;
   showMsgError = false;
   errorMsg = [];
+
+  customOptions: OwlOptions = {
+    autoplay: true,
+    autoplaySpeed: 1000,
+    autoplayHoverPause: false,
+    autoplayTimeout: 3500,
+    rtl: true,
+    items: 1,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 1000,
+    navText: ['', ''],
+    nav: false,
+  }
 
   constructor(private translate: TranslateService, private title: Title, private api: ApiService, private global: Globals) {
     this.translate.setDefaultLang('ar');
@@ -44,8 +63,6 @@ export class LandingC273Component implements OnInit {
   }
 
   subForm(form) {
-    // this.someData = 'C-237';
-    console.log("FORM", form.value)
     form.value.landing = 'C-237';
     this.showMsg = true;
     this.api.addLandingContactUs(form.value).subscribe(
