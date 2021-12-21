@@ -77,6 +77,24 @@ export class LandingBeitComponent implements OnInit {
       }
     );
   }
+  subForm1(form) {
+    form.value.landing = 'Beit el Watan';
+    form.value.full_name = form.value.full_name_1;
+    form.value.phone = form.value.phone_1;
+
+    this.showMsg = true;
+    this.api.addLandingContactUs(form.value).subscribe(
+      data => {
+        form.reset();
+        window.location.href ='/landing/success';
+        // window.scrollTo(0, 0);
+        this.showMsg = true;
+      },
+      error => {
+
+      }
+    );
+  }
 
   keyPressNum(event: any) {
     const pattern = /[0-9\+\-\ ]/;

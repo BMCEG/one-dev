@@ -15,14 +15,14 @@
           <div class="form-body">
             <form
               id="ContactUs-Form"
-              #varform="ngForm"
-              ngSubmit="subForm(varform)"
+              #varform1="ngForm"
+              ngSubmit="subForm1(varform1)"
             >
               <div class="form-group">
                 <input
                   ngModel
                   #fullname="ngModel"
-                  name="full_name"
+                  name="full_name_1"
                   type="text"
                   class="form-control"
                   id="name"
@@ -44,7 +44,7 @@
                 <input
                   ngModel
                   #phone="ngModel"
-                  name="phone"
+                  name="phone_1"
                   type="tel"
                   class="form-control"
                   id="phone"
@@ -81,8 +81,8 @@
               </div>
 
               <button
-                [disabled]="varform.invalid"
-                (click)="subForm(varform)"
+                [disabled]="varform1.invalid"
+                (click)="subForm1(varform1)"
                 type="submit"
                 class="primary-btn submit"
                 id="btn-sub"
