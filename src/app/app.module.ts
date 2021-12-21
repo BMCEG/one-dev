@@ -34,6 +34,8 @@ import { Landing138Component } from './client/landing-138-139b/landing.component
 import { LandingC273Component } from './client/landing-C-273/landing.component';
 import { LandingD124Component } from './client/landing-D-124/landing.component';
 import { LandingSuccess } from './client/landing-success/landing.component';
+import { LandingBeitComponent } from './client/landing/beit/landing.component';
+import { LandingNargesComponent } from './client/landing/narges/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +59,8 @@ import { LandingSuccess } from './client/landing-success/landing.component';
     Landing138Component,
     LandingC273Component,
     LandingD124Component,
+    LandingBeitComponent,
+    LandingNargesComponent,
     LandingSuccess
 
   ],

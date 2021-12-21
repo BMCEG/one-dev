@@ -1,5 +1,136 @@
 @import "../../../styles.scss";
 
+.landing-hero {
+  display: flex;
+  width: 100vw;
+  // background-color: cadetblue;
+  height: 100vh;
+  // background-image: url(../../../assets/img/home2.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+}
+#btn-landing {
+  // width: 300px;
+  margin: auto;
+  padding: 2vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center !important;
+}
+.overlay-beit {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+.overlay-narges {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+.overlay-base {
+  // background-color: red;
+  margin: auto !important;
+  padding: 2vmin;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overlay-title {
+  // background-color: crimson;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: $black;
+  color: white;
+  text-transform: uppercase;
+  z-index: 2;
+  padding-bottom: 20px;
+}
+h3 {
+  text-align: center;
+  // font-weight: $black;
+  color: white;
+  text-transform: uppercase;
+  z-index: 2;
+  padding-bottom: 20px;
+}
+.landing-hero-side {
+  width: 50%;
+  // height: 90vh;
+  // background-color: chartreuse;
+  // padding: 1%;
+  overflow: hidden;
+  // margin-top: auto;
+}
+.landing-hero-beit {
+  height: 100%;
+  // z-index: -1;
+  // background-color: chocolate;
+  background-image: url(../../../assets/img/landing/website/C237S.png);
+  background-position: center;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // transform: scale(1.1);
+}
+.landing-hero-narges {
+  height: 100%;
+  // z-index: -1;
+  // transform: scale(1.1);
+  background-image: url(../../../assets/img/landing/website/D124S.png);
+  background-position: center;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.landing-hero-beit:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1); /* IE 9 */
+  // transform: scale(1.1);
+  background-image: url(../../../assets/img/landing/website/C237H.png) !important;
+
+  // background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+.landing-hero-narges:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1); /* IE 9 */
+  background-image: url(../../../assets/img/landing/website/D124H.png) !important;
+}
+
 .jumbotron-bg {
   height: 100vh;
 
@@ -69,6 +200,9 @@
     font-weight: $medium;
     font-size: 20px;
   }
+}
+.display-none {
+  display: none !important;
 }
 
 .about-us {

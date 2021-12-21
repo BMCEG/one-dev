@@ -10,10 +10,10 @@ import { Globals } from 'src/app/app.config';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  arabic = false;
+  arabic = true;
   title_project_rout: any;
   constructor(private translate: TranslateService, private router: Router, @Inject(DOCUMENT) private document: Document, private global: Globals) {
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('ar');
     this.title_project_rout = this.global.our_projects;
   }
 

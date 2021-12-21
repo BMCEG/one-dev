@@ -18,6 +18,8 @@ import { Landing138Component } from '../client/landing-138-139b/landing.componen
 import { LandingD124Component } from '../client/landing-D-124/landing.component';
 import { LandingC273Component } from '../client/landing-C-273/landing.component';
 import { LandingSuccess } from '../client/landing-success/landing.component';
+import { LandingBeitComponent } from '../client/landing/beit/landing.component';
+import { LandingNargesComponent } from '../client/landing/narges/landing.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'ONE', depth: 1 } },
@@ -37,6 +39,9 @@ const routes: Routes = [
   { path: 'landing/D-124', component: LandingD124Component, data: { title: false, depth: 15 } },
   { path: 'landing/C-237', component: LandingC273Component, data: { title: false, depth: 16 } },
   { path: 'landing/success', component: LandingSuccess, data: { title: false, depth: 17 } },
+  { path: 'landing/beit-el-watan', component: LandingBeitComponent, data: { title: false, depth: 18 } },
+  { path: 'landing/narges', component: LandingNargesComponent, data: { title: false, depth: 19 } },
+  
 ];
 
 @NgModule({

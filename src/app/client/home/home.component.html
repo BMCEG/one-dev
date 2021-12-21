@@ -1,53 +1,52 @@
 <div class="jumbotron-bg">
   <div class="jumbotron-text-wrapper">
-    <h1>One developments</h1>
-    <h3 class="d-none d-md-block">{{'HOME.LUXURY_LIVING' |translate}}</h3>
+    <div class="landing-hero">
+      <div class="landing-hero-side">
+        <a href="/landing/beit-el-watan"
+          ><div class="landing-hero-beit">
+            <div class="overlay-base">
+              <h1 class="overlay-title">
+                <!-- بيت الوطن -->
+                {{ "HOME.LANDING_BEIT" | translate }}
+              </h1>
+              <br />
+              <button class="primary-btn submit" id="btn-landing">
+                <!-- عرض المشروعات -->
+                {{ "HOME.LANDING_BTN" | translate }}
+              </button>
+            </div>
+          </div></a
+        >>
+      </div>
+      <div class="landing-hero-side">
+        <a href="/landing/narges"
+          ><div class="landing-hero-narges">
+            <div class="overlay-base">
+              <h1 class="overlay-title">
+                {{ "HOME.LANDING_NARGES" | translate }}
+              </h1>
+              <br />
+              <button class="primary-btn submit" id="btn-landing">
+                {{ "HOME.LANDING_BTN" | translate }}
+                <!-- عرض المشروعات -->
+              </button>
+            </div>
+            <!-- </div> -->
+          </div></a
+        >>
+      </div>
+    </div>
   </div>
 
-  <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)"
-    #owlCar>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/PremiumOne-Delivering12-2021/project2.1.jpg)">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/Project/headers/header19.jpg)"></div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/Project/headers/Header21.jpg)"></div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/Project/headers/Header53.jpg)"></div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/Project/headers/Header88.jpg)">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/Project/headers/Header138.jpg)">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide" style="background-image:
-        url(../../assets/img/Project/headers/Header264.jpg)">
-      </div>
-    </ng-template>
-  </owl-carousel-o>
-
-
-  <div id="counter">
+  <div id="counter" class="display-none">
     <h1>0{{ currentSlide }}</h1>
     <h3>/7</h3>
   </div>
 
-  <a href="#aboutus" class="primary-link white"><img
-      src="../../assets/img/secLink.svg"> {{'HOME.SCROLL_BTN' |translate}}</a>
+  <a href="#aboutus" class="primary-link display-none white"
+    ><img src="../../assets/img/secLink.svg" />
+    {{ "HOME.SCROLL_BTN" | translate }}</a
+  >
 </div>
 
 <!-- <div class="about-us" id="aboutus">
@@ -76,38 +75,44 @@
   </div>
 </div> -->
 
-
 <div class="our-services">
   <div class="container-fluid">
     <div class="row text-center">
       <div class="col-xl-12">
-        <h3 class="mb-4 title">{{'HOME.OUR_PROJECTS_TITLE' |translate}}</h3>
-        <p>{{'HOME.OUR_PROJECTS_DESCRIPTION' |translate}}</p>
+        <h3 class="mb-4 title">{{ "HOME.OUR_PROJECTS_TITLE" | translate }}</h3>
+        <p>{{ "HOME.OUR_PROJECTS_DESCRIPTION" | translate }}</p>
       </div>
     </div>
 
-
     <div class="row our-project-box justify-content-center">
       <div class="col-xl-6 mt-5">
-        <div class="primary-box"
-          style="background-image:
-          url(../../../assets/img/PremiumOne-Delivering12-2021/project2.1.jpg)">
+        <div
+          class="primary-box"
+          style="
+            background-image: url(../../../assets/img/PremiumOne-Delivering12-2021/project2.1.jpg);
+          "
+        >
           <div class="overlay"></div>
-          <h3>{{'HOME.RESIDENTIAL_TITLE' |translate}}</h3>
-          <a [routerLink]="['/projects']" class="primary-link white">{{'HOME.BTN_EXPLORE'
-            |translate}}<img class="ml-5"
-              src="../../assets/img/secLink.svg"></a>
+          <h3>{{ "HOME.RESIDENTIAL_TITLE" | translate }}</h3>
+          <a [routerLink]="['/projects']" class="primary-link white"
+            >{{ "HOME.BTN_EXPLORE" | translate
+            }}<img class="ml-5" src="../../assets/img/secLink.svg"
+          /></a>
         </div>
       </div>
       <div class="col-xl-6 mt-5">
-        <div class="primary-box" style="background-image:
-          url(../../../assets/img/cp.jpg)">
+        <div
+          class="primary-box"
+          style="background-image: url(../../../assets/img/cp.jpg)"
+        >
           <div class="overlay"></div>
-          <h3>{{'HOME.COMMERCIAL_TITLE' |translate}}</h3>
-          <a [routerLink]="['/developments-commercial']"
-            class="primary-link white">{{'HOME.BTN_EXPLORE' |translate}}<img
-              class="ml-5"
-              src="../../assets/img/secLink.svg"></a>
+          <h3>{{ "HOME.COMMERCIAL_TITLE" | translate }}</h3>
+          <a
+            [routerLink]="['/developments-commercial']"
+            class="primary-link white"
+            >{{ "HOME.BTN_EXPLORE" | translate
+            }}<img class="ml-5" src="../../assets/img/secLink.svg"
+          /></a>
         </div>
       </div>
       <!-- <div class="col-xl-6 mt-5">
@@ -131,140 +136,178 @@
         </div>
       </div> -->
     </div>
-
   </div>
 </div>
-
-
 
 <div class="jumbotron-bg2 py-5 container-fluid">
   <div class="row align-items-center h-100">
     <div class="col-xl-7">
       <div class="jumbotron-text-wrapper2">
-        <h3 class="mb-4">{{'HOME.OUR_VISION_TITLE' |translate}}</h3>
-        <p class="">{{'HOME.OUR_VISION_DESC' |translate}}</p>
-        <a routerLink="about" class="primary-btn mt-5">{{'HOME.BTN_KNOW_MORE'
-          |translate}}</a>
+        <h3 class="mb-4">{{ "HOME.OUR_VISION_TITLE" | translate }}</h3>
+        <p class="">{{ "HOME.OUR_VISION_DESC" | translate }}</p>
+        <a routerLink="about" class="primary-btn mt-5">{{
+          "HOME.BTN_KNOW_MORE" | translate
+        }}</a>
       </div>
     </div>
   </div>
 </div>
 
-
-
 <div class="portfolio">
   <div class="container-fluid">
     <div class="row text-center">
       <div class="col-xl-12">
-        <h3 class="mb-4 title">{{'HOME.OUR_PORTFOLIO_LATEST' |translate}}</h3>
-        <p>{{'HOME.OUR_PORTFOLIO_DESCRIPTION' |translate}}</p>
+        <h3 class="mb-4 title">
+          {{ "HOME.OUR_PORTFOLIO_LATEST" | translate }}
+        </h3>
+        <p>{{ "HOME.OUR_PORTFOLIO_DESCRIPTION" | translate }}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
-        <div class="project-box l-por"
-          style="background-image:
-          url(../../../assets/img/Project/003_264_A/264-A-main-image.jpg)">
+        <div
+          class="project-box l-por"
+          style="
+            background-image: url(../../../assets/img/Project/003_264_A/264-A-main-image.jpg);
+          "
+        >
           <div class="overlay"></div>
           <div class="text-wrapper">
-            <p>{{'HOME.PROJ_ONE_LUNCH_DATE' |translate}}</p>
+            <p>{{ "HOME.PROJ_ONE_LUNCH_DATE" | translate }}</p>
             <div class="vl"></div>
-            <h3>{{'HOME.PROJ_ONE_TITLE' |translate}}</h3>
-            <p>{{'HOME.PROJ_ONE_DESC' |translate}}</p>
-            <a routerLink="projects" class="primary-link mt-4"
-              (click)="set_id(4)">{{'HOME.BTN_EXPLORE' |translate}}<img
-                class="ml-5" src="../../assets/img/primaryLink.svg"></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
-        <div class="project-box"
-          style="background-image:
-          url(../../../assets/img/Project/002-138-139B/139-b-main-image.jpg)">
-          <div class="overlay"></div>
-          <div class="text-wrapper">
-            <p>{{'HOME.PROJ_TWO_LUNCH_DATE' |translate}}</p>
-            <div class="vl"></div>
-            <h3>{{'HOME.PROJ_TWO_TITLE' |translate}}</h3>
-            <p>{{'HOME.PROJ_TWO_DESC' |translate}}</p>
-            <a routerLink="projects" class="primary-link mt-4"
-              (click)="set_id(4)">{{'HOME.BTN_EXPLORE' |translate}}<img
-                class="ml-5" src="../../assets/img/primaryLink.svg"></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
-        <div class="project-box" style="background-image:
-                  url(../../../assets/img/Project/004_26_F/26-f-main-image.jpg)">
-          <div class="overlay"></div>
-          <div class="text-wrapper">
-            <p>{{'HOME.PROJ_THREE_LUNCH_DATE' |translate}}</p>
-            <div class="vl"></div>
-            <h3>{{'HOME.PROJ_THREE_TITLE' |translate}}</h3>
-            <p>{{'HOME.PROJ_THREE_DESC' |translate}}</p>
-            <a target="_blank" href="../../assets/pdfs/pdf1.pdf"
+            <h3>{{ "HOME.PROJ_ONE_TITLE" | translate }}</h3>
+            <p>{{ "HOME.PROJ_ONE_DESC" | translate }}</p>
+            <a
+              routerLink="projects"
               class="primary-link mt-4"
-              (click)="set_id(3)">{{'HOME.BTN_EXPLORE' |translate}}<img
-                class="ml-5"
-                src="../../assets/img/primaryLink.svg"></a>
+              (click)="set_id(4)"
+              >{{ "HOME.BTN_EXPLORE" | translate
+              }}<img class="ml-5" src="../../assets/img/primaryLink.svg"
+            /></a>
           </div>
         </div>
       </div>
 
+      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
+        <div
+          class="project-box"
+          style="
+            background-image: url(../../../assets/img/Project/002-138-139B/139-b-main-image.jpg);
+          "
+        >
+          <div class="overlay"></div>
+          <div class="text-wrapper">
+            <p>{{ "HOME.PROJ_TWO_LUNCH_DATE" | translate }}</p>
+            <div class="vl"></div>
+            <h3>{{ "HOME.PROJ_TWO_TITLE" | translate }}</h3>
+            <p>{{ "HOME.PROJ_TWO_DESC" | translate }}</p>
+            <a
+              routerLink="projects"
+              class="primary-link mt-4"
+              (click)="set_id(4)"
+              >{{ "HOME.BTN_EXPLORE" | translate
+              }}<img class="ml-5" src="../../assets/img/primaryLink.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
+        <div
+          class="project-box"
+          style="
+            background-image: url(../../../assets/img/Project/004_26_F/26-f-main-image.jpg);
+          "
+        >
+          <div class="overlay"></div>
+          <div class="text-wrapper">
+            <p>{{ "HOME.PROJ_THREE_LUNCH_DATE" | translate }}</p>
+            <div class="vl"></div>
+            <h3>{{ "HOME.PROJ_THREE_TITLE" | translate }}</h3>
+            <p>{{ "HOME.PROJ_THREE_DESC" | translate }}</p>
+            <a
+              target="_blank"
+              href="../../assets/pdfs/pdf1.pdf"
+              class="primary-link mt-4"
+              (click)="set_id(3)"
+              >{{ "HOME.BTN_EXPLORE" | translate
+              }}<img class="ml-5" src="../../assets/img/primaryLink.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
-        <div class="project-box l-por"
-          style="background-image:
-          url(../../../assets/img/Project/005_149_New-Narges/149-G-main-image.jpg)">
+        <div
+          class="project-box l-por"
+          style="
+            background-image: url(../../../assets/img/Project/005_149_New-Narges/149-G-main-image.jpg);
+          "
+        >
           <div class="overlay"></div>
           <div class="text-wrapper">
-            <p>{{'HOME.PROJ_FOUR_LUNCH_DATE' |translate}}</p>
+            <p>{{ "HOME.PROJ_FOUR_LUNCH_DATE" | translate }}</p>
             <div class="vl"></div>
-            <h3>{{'HOME.PROJ_FOUR_TITLE' |translate}}</h3>
-            <p>{{'HOME.PROJ_FOUR_DESC' |translate}}</p>
-            <a routerLink="projects" class="primary-link mt-4"
-              (click)="set_id(4)">{{'HOME.BTN_EXPLORE' |translate}}<img
-                class="ml-5" src="../../assets/img/primaryLink.svg"></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
-        <div class="project-box"
-          style="background-image:
-          url(../../../assets/img/Project/001_19_O/19-O-main-view.jpg)">
-          <div class="overlay"></div>
-          <div class="text-wrapper">
-            <p>{{'HOME.PROJ_FIVE_LUNCH_DATE' |translate}}</p>
-            <div class="vl"></div>
-            <h3>{{'HOME.PROJ_FIVE_TITLE' |translate}}</h3>
-            <p>{{'HOME.PROJ_FIVE_DESC' |translate}}</p>
-            <a routerLink="projects" class="primary-link mt-4"
-              (click)="set_id(4)">{{'HOME.BTN_EXPLORE' |translate}}<img
-                class="ml-5" src="../../assets/img/primaryLink.svg"></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
-        <div class="project-box" style="background-image:
-          url(../../../assets/img/Project/006_E88/88-E-main-image.jpg)">
-          <div class="overlay"></div>
-          <div class="text-wrapper">
-            <p>{{'HOME.PROJ_SIX_LUNCH_DATE' |translate}}</p>
-            <div class="vl"></div>
-            <h3>{{'HOME.PROJ_SIX_TITLE' |translate}}</h3>
-            <p>{{'HOME.PROJ_SIX_DESC' |translate}}</p>
-            <a target="_blank" href="../../assets/pdfs/pdf1.pdf"
+            <h3>{{ "HOME.PROJ_FOUR_TITLE" | translate }}</h3>
+            <p>{{ "HOME.PROJ_FOUR_DESC" | translate }}</p>
+            <a
+              routerLink="projects"
               class="primary-link mt-4"
-              (click)="set_id(3)">{{'HOME.BTN_EXPLORE' |translate}}<img
-                class="ml-5"
-                src="../../assets/img/primaryLink.svg"></a>
+              (click)="set_id(4)"
+              >{{ "HOME.BTN_EXPLORE" | translate
+              }}<img class="ml-5" src="../../assets/img/primaryLink.svg"
+            /></a>
           </div>
         </div>
       </div>
 
+      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
+        <div
+          class="project-box"
+          style="
+            background-image: url(../../../assets/img/Project/001_19_O/19-O-main-view.jpg);
+          "
+        >
+          <div class="overlay"></div>
+          <div class="text-wrapper">
+            <p>{{ "HOME.PROJ_FIVE_LUNCH_DATE" | translate }}</p>
+            <div class="vl"></div>
+            <h3>{{ "HOME.PROJ_FIVE_TITLE" | translate }}</h3>
+            <p>{{ "HOME.PROJ_FIVE_DESC" | translate }}</p>
+            <a
+              routerLink="projects"
+              class="primary-link mt-4"
+              (click)="set_id(4)"
+              >{{ "HOME.BTN_EXPLORE" | translate
+              }}<img class="ml-5" src="../../assets/img/primaryLink.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 mt-5">
+        <div
+          class="project-box"
+          style="
+            background-image: url(../../../assets/img/Project/006_E88/88-E-main-image.jpg);
+          "
+        >
+          <div class="overlay"></div>
+          <div class="text-wrapper">
+            <p>{{ "HOME.PROJ_SIX_LUNCH_DATE" | translate }}</p>
+            <div class="vl"></div>
+            <h3>{{ "HOME.PROJ_SIX_TITLE" | translate }}</h3>
+            <p>{{ "HOME.PROJ_SIX_DESC" | translate }}</p>
+            <a
+              target="_blank"
+              href="../../assets/pdfs/pdf1.pdf"
+              class="primary-link mt-4"
+              (click)="set_id(3)"
+              >{{ "HOME.BTN_EXPLORE" | translate
+              }}<img class="ml-5" src="../../assets/img/primaryLink.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- <div class="row text-center mt-2 pt-5">
       <div class="col-xl-12">
@@ -328,11 +371,15 @@
   </div>
 </div>
 
-
 <div class="map">
   <iframe
     src="https://maps.google.com/maps?q=30.021918911826624,%2031.453035560534254&t=&z=17&ie=UTF8&iwloc=&output=embed"
-    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    width="600"
+    height="450"
+    frameborder="0"
+    style="border: 0"
+    allowfullscreen
+  ></iframe>
 </div>
 
 <!--   (click)="set_id(7)"
