@@ -88,7 +88,7 @@ class LandingContact(views.APIView):
       date = now.strftime("%d/%m/%Y")
       time = now.strftime("%H:%M:%S")
 
-      insertRow = [data['full_name'], data['phone'], data['email'], date, time, data['landing']]
+      insertRow = [data['full_name'], data['phone'], '', date, time, data['landing']]
       sheet.append_row(insertRow)
       return Response({'error': False})
     except Exception as e:
